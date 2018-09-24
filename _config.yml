@@ -4,3 +4,10 @@ author: Doug Breaux
 theme: jekyll-theme-hacker
 
 paginate: 10
+
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
