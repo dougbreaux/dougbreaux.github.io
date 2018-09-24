@@ -4,3 +4,5 @@ author: Doug Breaux
 theme: jekyll-theme-hacker
 
 paginate: 10
+
+highlighter: rouge
