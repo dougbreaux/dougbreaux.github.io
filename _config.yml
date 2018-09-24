@@ -1,2 +1,6 @@
 name: Dougclectica Rebooted, on GitHub
+author: Doug Breaux
+
 theme: jekyll-theme-minimal
+
+paginate: 10
