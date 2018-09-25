@@ -1,0 +1,44 @@
+---
+title: Tip: Finding exact version and applied patches of IBM HTTP Server
+tags: [tips,ihs,apache,httpd]
+---
+
+`apachectl -V`
+
+For instance
+
+```
+Server version: IBM_HTTP_Server/6.1.0.31 Apache/2.0.47  
+Server built:   Mar  3 2010 21:55:48  
+Build level:    IHS60/webIHS1009.03  
+Server's Module Magic Number: 20020903:4  
+Architecture:   32-bit  
+Server compiled with....  
+ -D APACHE_MPM_DIR="server/mpm/worker"  
+ -D APR_HAS_SENDFILE  
+ -D APR_HAS_MMAP  
+ -D APR_HAVE_IPV6 (IPv4-mapped addresses enabled)  
+ -D APR_USE_SYSVSEM_SERIALIZE  
+ -D APR_USE_PTHREAD_SERIALIZE  
+ -D SINGLE_LISTEN_UNSERIALIZED_ACCEPT  
+ -D APR_HAS_OTHER_CHILD  
+ -D AP_HAVE_RELIABLE_PIPED_LOGS  
+ -D HTTPD_ROOT="/usr/IBMIHS"  
+ -D SUEXEC_BIN="/usr/IBMIHS/bin/suexec"  
+ -D DEFAULT_SCOREBOARD="logs/apache_runtime_status"  
+ -D DEFAULT_ERRORLOG="logs/error_log"  
+ -D AP_TYPES_CONFIG_FILE="conf/mime.types"  
+ -D SERVER_CONFIG_FILE="conf/httpd.conf"  
+Apache vulnerability fixes included:  
+  CVE-2002-1156  CVE-2002-0840  CVE-2003-0132  CVE-2003-0134  
+  CVE-2003-0189  CVE-2003-0245  CVE-2003-0254  CVE-2003-0253  
+  CVE-2003-0192  CVE-2003-0789  CVE-2003-0542  CVE-2004-0174  
+  CVE-2004-0493  CVE-2004-0747  CVE-2004-0786  CVE-2004-0809  
+  CVE-2004-0942  CVE-2003-0020  CVE-2005-2088  CVE-2005-2728  
+  CVE-2005-2491  CVE-2005-2970  CVE-2005-3352  CVE-2006-3918  
+  CVE-2006-3747  CVE-2006-5752  CVE-2007-1863  CVE-2007-3847  
+  CVE-2007-3304  CVE-2007-6203  CVE-2007-5000  CVE-2007-6388  
+  CVE-2009-0436  CVE-2008-2364  CVE-2008-2939  CVE-2009-1956  
+  CVE-2009-0023  CVE-2009-1890  CVE-2009-1891  CVE-2009-2412  
+  CVE-2009-3094  CVE-2009-3095  CVE-2009-3555  CVE-2010-0434  
+```
