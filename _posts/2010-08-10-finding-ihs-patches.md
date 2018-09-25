@@ -1,5 +1,5 @@
 ---
-title: Tip: Finding exact version and applied patches of IBM HTTP Server
+title: Tip - Finding exact version and applied patches of IBM HTTP Server
 tags: [tips,ihs,apache,httpd]
 ---
 
