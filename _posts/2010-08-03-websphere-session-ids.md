@@ -2,7 +2,7 @@
 title: WebSphere Session IDs
 tags: [session,cluster,websphere,httpsession,jsessionid,affinity,plugin]
 ---
-![WebSphere Application Server](http://www-01.ibm.com/software/main/img/com/ws-mark-170x22.gif "WebSphere Application Server")
+![WebSphere Application Server](https://www-01.ibm.com/software/main/img/com/ws-mark-170x22.gif "WebSphere Application Server")
 During investigation of some intermittent problems in one of our web applications, we observed some JSESSIONID cookie behavior that we couldn't explain, so I performed some investigation into the cookie's mechanics. I'll attempt to summarize in this article what I learned.
 
 ## JSESSIONID Cookie Format
