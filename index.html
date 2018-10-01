@@ -2,6 +2,9 @@
 layout: default
 title: Dougclectica Rebooted
 ---
+<input type="text" id="search-input" placeholder="search posts..">
+<br/>
+<div id="results-container"></div>
 <ul>
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
