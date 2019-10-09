@@ -1,5 +1,5 @@
 # dougbreaux.github.io
 
-Development blog topics, originally (largely manually) pulled in from ~soon-to-be-sunset~ blog on DeveloperWorks.
+Development blog topics, originally (largely manually) pulled in from [soon-to-be-sunset](https://developer.ibm.com/code/dw-connections-sunset-faq/) [blog on DeveloperWorks](https://www.ibm.com/developerworks/community/blogs/Dougclectica/).
 
-_On hold_. Perhaps DeveloperWorks isn't being sunset after all. Or not yet, anyway. And here, I'd still have to solve the problems of search and commenting.
+Here, I may have no search or commenting.
