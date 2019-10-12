@@ -1,8 +1,3 @@
----
-layout: post
-title: SSH key authentication with PuTTY, Part 2: Tunneling with Plink 
-tags: [pageant,ssh,putty,windows,authentication,security,unix]
----
 Following up on [Part 1](/2011/02/03/ssh-key-authentication-with-putty.html), here's an additional tip which I use frequently. That is, when I need to tunnel SSH through one machine to reach others, using a background proxy with SSH key authentication for the initial connection simplifies this 2-hop process.  
 
 ## Automatic proxying with Plink
