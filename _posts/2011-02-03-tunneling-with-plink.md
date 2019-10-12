@@ -1,4 +1,5 @@
 ---
+layout: post
 title: SSH key authentication with PuTTY, Part 2: Tunneling with Plink 
 tags: [pageant,ssh,putty,windows,authentication,security,unix]
 ---
