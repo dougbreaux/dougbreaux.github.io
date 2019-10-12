@@ -3,7 +3,7 @@ author: Doug Breaux
 
 #remote-theme: agusmakmun/agusmakmun.github.io
 
-#theme: jekyll-theme-slate
+theme: jekyll-theme-slate
 
 paginate: 10
 
