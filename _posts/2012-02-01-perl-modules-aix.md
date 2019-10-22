@@ -4,8 +4,6 @@ tags: [libraries,cpan,modules,perl,aix]
 ---
 I'm sure this information is in hundreds or thousands of other places, but as I had written it up for an internal team Wiki, I thought I'd repost here as well.
 
-<div>
-
 [CPAN](http://www.cpan.org/) is the Comprehensive Perl Archive Network. It contains the Perl distributions and source code, Perl documentation, and Perl [add-on Modules](http://www.cpan.org/modules/index.html), among other things.
 
 ## AIX
