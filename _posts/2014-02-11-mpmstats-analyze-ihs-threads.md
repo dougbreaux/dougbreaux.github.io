@@ -2,7 +2,7 @@
 title: mod_mpmstats to analyze thread usage in IBM HTTP Server
 tags: [ ihs, mpmstats, stats, apache, httpd ]
 ---
-(Related to my earlier [post on mod_status](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/using_ibm_http_server_6_1_diagnostic_capabilities_with_websphere7).)
+(Related to my earlier [post on mod_status](/2012/09/06/ihs-diagnostics-websphere.html).)
 
 Found this useful tidbit today from [IBM HTTP Server Performance Tuning](https://publib.boulder.ibm.com/httpserv/ihsdiag/ihs_performance.html):
 
