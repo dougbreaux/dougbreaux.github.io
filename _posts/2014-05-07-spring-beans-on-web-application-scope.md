@@ -2,7 +2,7 @@
 title: Spring Beans on Web Application Scope
 tags: [  jsp, scope, servletcontext, el, spring ]
 ---
-There are times when we'd like to place injected Spring beans onto a scope where they can be accessed directly by JSTL EL expressions (${variable}). Perhaps URLs from JEE Resource References to be used in hrefs.
+There are times when we'd like to place injected Spring beans onto a scope where they can be accessed directly by JSTL EL expressions (`${variable}`). Perhaps URLs from JEE Resource References to be used in hrefs.
 
 Spring has a class that enables us to do this directly from its configuration file, [ServletContextAttributeExporter](http://docs.spring.io/spring/docs/2.5.x/api/org/springframework/web/context/support/ServletContextAttributeExporter.html). This class will place beans on "Web Application Scope", also known as "Servlet Context".
 
