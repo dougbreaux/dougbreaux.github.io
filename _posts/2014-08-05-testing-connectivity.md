@@ -2,10 +2,10 @@
 title: Testing Remote TCP/IP Connectivity
 tags: [ firewall, tcip/ip, linux, network, ip, ssh, port, telnet, openssl, rhel ]
 ---
+We frequently need to confirm connectivity between systems on particular ports.
+
 * TOC
 {:toc}
-
-We frequently need to confirm connectivity between systems on particular ports.
 
 # telnet
 
