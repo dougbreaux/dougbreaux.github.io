@@ -13,7 +13,7 @@ As I was looking to write this, I found a couple other articles with a lot of ad
 
 However, my immediate case is a simple one of using a "hardcoded" default property value with a System Property override. For that case, the Spring config looks something like this:
 ```xml
-<span style="font-family:courier new,courier,monospace;">    <!-- Property placeholders, overridable by System.properties -->  
+    <!-- Property placeholders, overridable by System.properties -->  
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
         <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>  
         <property name='properties'>  
@@ -22,6 +22,6 @@ However, my immediate case is a simple one of using a "hardcoded" default proper
                 <prop key="environment">test</prop>  
             </props>  
         </property>  
-    </bean></span>
+    </bean>
 ```
 (I gather that as of Spring 3.1, [PropertySourcesPlaceholderConfigurer](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html) is preferred to [PropertyPlaceholderConfigurer](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.html), but my current customer is on older Spring for the moment.)
