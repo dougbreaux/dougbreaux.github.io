@@ -1,5 +1,5 @@
 ---
-title: 'SoapUI: scripting today's date'
+title: "SoapUI: scripting today's date"
 tags: [ groovy, web-services, soapui, testing ]
 ---
 See [Working with Properties](https://www.soapui.org/scripting---properties/working-with-properties.html) and the subsequent articles under that same "Scripting & Properties" section.
