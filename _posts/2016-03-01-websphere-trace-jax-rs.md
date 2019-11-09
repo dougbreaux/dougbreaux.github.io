@@ -1,5 +1,5 @@
 ---
-title: Tracing JAX-RS client messages in WebSpher
+title: Tracing JAX-RS client messages in WebSphere
 tags: [  websphere, rest, trace, wink, client, jax-rs ]
 ---
 Through just a little trial-and-error, these trace strings get me the basic URL and request/response message contents when running [JAX-RS client code from within WebSphere Application Server 8.5](http://www-01.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/twbs_jaxrs_impl_client_winkrestclient.html) (which uses [Apache Wink](http://wink.apache.org/1.0/html/6.1%20Getting%20Started%20with%20Apache%20Wink%20Client.html) as its JAX-RS implementation):
