@@ -5,7 +5,7 @@ author: Doug Breaux
 
 #theme: jekyll-theme-slate
 
-paginate: 10
+paginate: 15
 
 markdown: kramdown
 kramdown:
