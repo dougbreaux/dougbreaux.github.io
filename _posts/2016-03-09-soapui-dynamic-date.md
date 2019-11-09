@@ -11,8 +11,9 @@ My specific desire was to be able to pass "tomorrow's date" as a dynamic paramet
 [http://community.smartbear.com/t5/SoapUI-Open-Source/Dynamic-date-REST-parameter/td-p/115467](http://community.smartbear.com/t5/SoapUI-Open-Source/Dynamic-date-REST-parameter/td-p/115467)
 
 I'm able specify this snippet as the value of my date (template) parameter:
-
-`${=def now = new Date();now++;now.format("yyyy-MM-dd")}`
+```groovy
+${=def now = new Date();now++;now.format("yyyy-MM-dd")}
+```
 
 ## Notes:
 
