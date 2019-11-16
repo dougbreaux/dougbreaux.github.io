@@ -1,6 +1,6 @@
 ---
 title: JAXB @XmlRootElement and JAXBElement<class>
-tags: [	jaxb, schema, java, xsd, xml 
+tags: [	jaxb, schema, java, xsd, xml ]
 ---
 Little tip when generating JAXB classes from XML Schema:
 
