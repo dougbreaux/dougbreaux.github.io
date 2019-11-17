@@ -2,7 +2,9 @@
 title: Liberty for a Traditionalist
 tags: [ liberty, traditional, eclipse, websphere, server.xml, rad ]
 ---
-## ![image](https://avatars1.githubusercontent.com/u/4928521?s=200&v=4)WebSphere Liberty vs. "Traditional"
+## WebSphere Liberty vs. "Traditional"
+
+![image](https://avatars1.githubusercontent.com/u/4928521?s=200&v=4)
 
 Liberty is the newer, lighter-weight Java EE WebSphere server. That also gets new capabilities and [specification level support](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_prog_model_support.html?cp=SSAW57_8.5.5) faster than "Traditional WAS" (a.k.a. "tWAS" or "Full Profile").
 
