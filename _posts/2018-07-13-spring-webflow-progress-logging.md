@@ -40,7 +40,7 @@ The basic entity of this solution is a custom <span style="font-family:courier n
 ```
 You configure a FlowExecutionListener for Spring Web Flow like this:
 ```xml
-<bean id="progressLoggingListener" class="my.custom.webflow.ProgressLoggingFlowExecutionListener"/>
+    <bean id="progressLoggingListener" class="my.custom.webflow.ProgressLoggingFlowExecutionListener"/>
 
     <webflow:flow-executor id="flowExecutor">  
         <webflow:flow-execution-listeners>  
