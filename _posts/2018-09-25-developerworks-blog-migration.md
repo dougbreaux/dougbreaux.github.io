@@ -12,15 +12,15 @@ First, while there appears to be no way to export content from the web UI, [the 
 
 The Blogs I have access to:
 
-[https://www.ibm.com/developerworks/community/blogs/api?lang=en](https://www.ibm.com/developerworks/community/blogs/api?lang=en)
+ [https://www.ibm.com/developerworks/community/blogs/api?lang=en](https://www.ibm.com/developerworks/community/blogs/api?lang=en)
 
 This particular Blog:
 
-[https://www.ibm.com/developerworks/community/blogs/Dougclectica/api?lang=en](https://www.ibm.com/developerworks/community/blogs/Dougclectica/api?lang=en)
+ [https://www.ibm.com/developerworks/community/blogs/Dougclectica/api?lang=en](https://www.ibm.com/developerworks/community/blogs/Dougclectica/api?lang=en)
 
 The first 100 (I only have 75) entries from this Blog:
 
-[https://www.ibm.com/developerworks/community/blogs/Dougclectica/api/entries?ps=100&lang=en](https://www.ibm.com/developerworks/community/blogs/Dougclectica/api/entries?ps=100&lang=en)
+ [https://www.ibm.com/developerworks/community/blogs/Dougclectica/api/entries?ps=100&lang=en](https://www.ibm.com/developerworks/community/blogs/Dougclectica/api/entries?ps=100&lang=en)
 
 Where each Blog post is an Atom `<entry>` element, with among other things, title, publish date, tags, and content containing the HTML of the post.
 
