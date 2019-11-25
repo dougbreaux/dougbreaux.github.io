@@ -2,7 +2,7 @@
 title: JSR 303 Validation with Spring Web Flow
 tags: [ spring, bean, mvc, jsr303, validation, java, webflow ]
 ---
-A bit of additional information about using JSR-303 validation with Spring Web Flow. (See {% post_url 2018-05-23-springmvc-jsr303-websphere %}.)
+A bit of additional information about using JSR-303 validation with Spring Web Flow. (See [Spring MVC, JSR 303 Validation, and WebSphere]({% post_url 2018-05-23-springmvc-jsr303-websphere %}).)
 
 I was hoping to use this instead of custom Java code with my Spring MVC/WebFlow application, but I think there are enough limitations in the simple use case (like non-deterministic validation ordering), that I'll probably stick with Java Validator code for now.
 
