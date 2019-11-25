@@ -1,1 +1,13 @@
-theme: jekyll-theme-tactile
+name: Dougclectica Rebooted, on GitHub
+author: Doug Breaux
+
+#theme: jekyll-theme-tactile
+
+paginate: 15
+
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: false
