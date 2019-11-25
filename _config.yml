@@ -1,10 +1,7 @@
 name: Dougclectica Rebooted, on GitHub
 author: Doug Breaux
 
-#remote-theme: agusmakmun/agusmakmun.github.io
-#remote-theme: "jekyll/minima"
 theme: jekyll-theme-tactile
-#remote_theme: "mmistakes/minimal-mistakes@4.17.2"
 
 paginate: 15
 
