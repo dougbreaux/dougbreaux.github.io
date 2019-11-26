@@ -14,13 +14,13 @@ DeveloperWorks article [Troubleshooting JAX-WS applications with the WebSphere A
 
 Using option 4 from that Knowledge Center article, on the WebSphere console, go to **Troubleshooting** > **Logs and trace** > ServerName > **Change log detail levels**
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/Capture.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/Capture.PNG)
+[![image](/assets/Capture.PNG)](/assets/Capture.PNG)
 
 Then add the string "**com.ibm.ws.websvcs.trace.*=all**" (the colon is the separator between multiple log strings being traced).
 
 Or drill down via the "**Components and Groups**" selection list:
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/Capture2.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/Capture2.PNG)
+[![image](/assets/Capture2.PNG)](/assets/Capture2.PNG)
 
 ## Trace Data
 
