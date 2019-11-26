@@ -12,7 +12,7 @@ To me, this seems a very wise thing to do for anyone who manages multiple enviro
 
 Note also another useful answer there that the WAS console does have a built-in mechanism for adding a custom text string to the banner. You can set this custom string in the **System Administration** > **Console Identity** > **Custom identity string** field.
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/PastedImage2017-10-10at21.46.52.png)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/PastedImage2017-10-10at21.46.52.png)
+[![image](/assets/PastedImage2017-10-10at21.46.52.png)](/assets/PastedImage2017-10-10at21.46.52.png)
 
 ## Something more drastic
 
@@ -20,7 +20,7 @@ But the Stylish approach allows you to make some more obvious, drastic visual di
 
 This script styles the `#ibm-banner-main` element by adding a background color to it. The effect looks like this:
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/WAS-stylish-banner.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/WAS-stylish-banner.PNG)
+[![image](/assets/WAS-stylish-banner.PNG)](/assets/WAS-stylish-banner.PNG)
 
 (Where the "*CUST*" string is the aforementioned "Custom identity string".)
 
