@@ -14,7 +14,7 @@ A side-benefit is the ability to manage my active list of "browsing" pages separ
 
 Next, how do you use multiple profiles?  I won't attempt to duplicate the details described thoroughly in [these](http://kb.mozillazine.org/Profile_Manager) [articles](http://kb.mozillazine.org/Opening_a_new_instance_of_your_Mozilla_application_with_another_profile), but here's a quick summary:
 
-![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/FirefoxProfileManager.png)
+![image](/assets/FirefoxProfileManager.png)
 
 1.  Run the firefox executable with the command-line options "-P -no-remote".  This opens the Profile Manager and tells Firefox not to attempt to connect to an already-running copy.  
 
