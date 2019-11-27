@@ -7,11 +7,12 @@ description: > # this means to ignore newlines until "show_excerpts:"
 show_excerpts: true
 
 theme: minima
+# to get latest master
+#remote_theme: jekyll/minima
 
 rss: rss
 github_username: dougbreaux
 linkedin_username: dougbreaux
-stackoverflow_username: dbreaux
 
 paginate: 15
 
@@ -25,3 +26,5 @@ kramdown:
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ # for remote themes
+ #- jekyll-remote-theme
