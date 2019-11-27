@@ -2,7 +2,7 @@
 title: Using a Template Engine from your Java code
 tags: [html,template,velocitytools,java,velocity,stringtemplate]
 ---
-![image](http://velocity.apache.org/engine/releases/velocity-1.7/images/velocity-logo.png)Several times we've needed to retain output files which are a mix of static HTML and dynamic data.
+![image](https://velocity.apache.org/engine/releases/velocity-1.7/images/velocity-logo.png)Several times we've needed to retain output files which are a mix of static HTML and dynamic data.
 
 In some of those cases, we've wanted to capture the same HTML (or a subset of it) which was returned to a user's browser as a normal HTTP response. While that's made me wish for a programmatic way to call the JSP engine, we ended up using a custom Filter to just capture the HTML on the way out, and that's worked well enough.
 
