@@ -24,6 +24,9 @@ kramdown:
         block:
             line_numbers: false
 
+gems:
+  - jekyll-paginate
+
 plugins:
  - jekyll-paginate
  - jekyll-feed
