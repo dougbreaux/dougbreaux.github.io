@@ -34,6 +34,7 @@ minima:
     #stackoverflow: dbreaux
 
 rss: rss
+linkedin: dougbreaux
 github: dougbreaux
 
 paginate: 15
