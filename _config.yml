@@ -15,6 +15,7 @@ github_username: dougbreaux
 linkedin_username: dougbreaux
 
 paginate: 15
+paginate_path: posts/page:num/
 
 markdown: kramdown
 kramdown:
