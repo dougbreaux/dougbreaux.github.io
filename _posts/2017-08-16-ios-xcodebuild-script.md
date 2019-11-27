@@ -35,7 +35,7 @@ A few Conditional Compilation code blocks will choose different settings or make
 
 Under the Project's (not the Target's) **Info** tab, in the Configurations section, we've created an additional **Test** Configuration, copied from "Duplicate Release Configuration".
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/1.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/1.PNG)
+[![image](/assets/1.PNG)](/assets/1.PNG)
 
 Note, also, just below that section, the "Use **Release** for command-line builds". We'll explicitly override it in our build script, but it's worth noting that it exists.
 
@@ -53,7 +53,7 @@ By default, the **Debug** entry has a DEBUG flag set.
 
 We've added a PROD flag to the **Release** entry.
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/2.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/2.PNG)
+[![image](/assets/2.PNG)](/assets/2.PNG)
 
 Note: We're not currently changing the application Bundle ID, name, or icons for the different Configurations. So we won't be able to have multiple builds installed on a device at the same time. It could be useful, but would require quite a bit more effort and complication.
 
@@ -61,13 +61,13 @@ Note: We're not currently changing the application Bundle ID, name, or icons for
 
 When you run an application from within Xcode, you get the **Debug** Configuration by default. If you wish to run in a different Configuration, you can change this by editing the Scheme and changing the selected Configuration for the Run "task". This is a useful way to test your Production settings from the Xcode simulator before building them to push out to a store or device.
 
-[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/3.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/3.PNG)[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/4.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/4.PNG)[![image](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/5.PNG)](https://www.ibm.com/developerworks/community/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/5.PNG)
+[![image](/assets/3.PNG)](/assets/3.PNG)[![image](/assets/4.PNG)](/assets/4.PNG)[![image](/assets/5.PNG)](/assets/5.PNG)
 
 _Note: I think this setting is stored in your user-specific settings, which we've excluded from Git. So it won't want a commit or affect others._
 
 ## Build Script
 
-I'm sharing a [simplified version of script itself here](https://www.ibm.com/developerworks/community/files/app#/file/d24e248c-9270-48d7-9dc3-4fa2b9308951). I'll note the main items below.
+I'm sharing a [simplified version of the script itself here](https://github.com/dougbreaux/dougbreaux.github.io/blob/master/files/build.sh). I'll note the main items below.
 
 ### Build Configuration
 
@@ -95,7 +95,7 @@ Since CocoaPods projects use an Xcode Workspace rather than a Project, we use th
 
 ### exportOptionsPlist
 
-Finally, the earlier `-exportFormat` option is now gone, in its place is `-exportOptionsPlist`, which uses a plist file to specify build options. That is currently the file [build.plist](https://www.ibm.com/developerworks/community/files/app#/file/7abd2776-dda8-40bd-9862-b44ec2875321), with the option:
+Finally, the earlier `-exportFormat` option is now gone, in its place is `-exportOptionsPlist`, which uses a plist file to specify build options. That is currently the file [build.plist](https://github.com/dougbreaux/dougbreaux.github.io/blob/master/files/build.plist), with the option:
 
 `method=development`
 
