@@ -25,6 +25,7 @@ kramdown:
             line_numbers: false
 
 plugins:
+ - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
  # for remote themes
