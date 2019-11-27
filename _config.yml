@@ -8,25 +8,7 @@ show_excerpts: true
 
 theme: minima
 
-# generate social links in footer
-social_links:
-  #twitter: jekyllrb
-  github:  dougbreaux
-  rss: rss
-  # dribbble: jekyll
-  # facebook: jekyll
-  # flickr:   jekyll
-  # instagram: jekyll
-  linkedin: dougbreaux
-  # pinterest: jekyll
-  # youtube: jekyll
-  # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-  # youtube_channel_name: CloudCannon
-  # telegram: jekyll
-  # googleplus: +jekyll
-  # microdotblog: jekyll
-  # keybase: jekyll
-  #stackoverflow: dbreaux
+rss: rss
 
 paginate: 15
 
