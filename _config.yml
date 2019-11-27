@@ -3,6 +3,7 @@ author: Doug Breaux
 
 theme: minima
 show_excerpts: true
+rss: rss
 
 paginate: 15
 
