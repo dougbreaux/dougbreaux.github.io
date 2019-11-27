@@ -1,13 +1,38 @@
 name: Dougclectica Rebooted
-author: Doug Breaux
-
-theme: minima
 title: Dougclectica Rebooted
 author: Doug Breaux
 #email: your-email@domain.com
 description: > # this means to ignore newlines until "show_excerpts:"
   Topics from my software development meanderings.
 show_excerpts: true
+
+theme: minima
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+#  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    #twitter: jekyllrb
+    github:  dougbreaux
+    rss: rss
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    linkedin: dougbreaux
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+    # keybase: jekyll
+    stackoverflow: dbreaux
+
 rss: rss
 
 paginate: 15
