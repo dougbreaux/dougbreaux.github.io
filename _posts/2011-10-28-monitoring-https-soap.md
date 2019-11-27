@@ -16,13 +16,13 @@ First, you'll need a jks TrustStore where you can place the public key of the se
 
 Next, it seemed fairly obvious what to do in soapUI. Right-click on a project and "Launch HTTP Monitor". You're presented with the following dialog:
 
-[![image](https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor.jpg)](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor.jpg)
+[![image](/assets/soapuitcpmonitor.jpg)](/assets/soapuitcpmonitor.jpg)
 
 To do https/SSL, you need to select **HTTP Tunnel** rather than **HTTP Proxy**. Set the Port to the local port your client is going to hit, and the endpoint to the remote service URL you're ultimately calling.
 
 Then go to the Security tab:
 
-[![image](https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor2.jpg)](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor2.jpg)
+[![image](/assets/soapuitcpmonitor2.jpg)](/assets/soapuitcpmonitor2.jpg)
 
 Initially, all I had was the aforementioned TrustStore configured here in the **HTTP tunnel - TrustStore** and **TrustStore Password** fields. This allows the HTTP Monitor to talk SSL _to the remote Service_.
 
@@ -30,13 +30,14 @@ Initially, all I had was the aforementioned TrustStore configured here in the **
 
 However, when I started the monitor with those settings, I received a cryptic dialog, "**Error starting monitor: C:\Program Files(x86)\SmartBear\soapUI-4.0.1\bin (Access is denied)**":
 
-[![image](https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitorerror.jpg)](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitorerror.jpg)
+[![image](/assets/soapuitcpmonitorerror.jpg)](/assets/soapuitcpmonitorerror.jpg)
 
 I suspected Windows authority problems or path problems, but nothing seemed to resolve those, so I tried running the soapui.bat script from a command-prompt rather than the soapUI desktop shortcut, and then I saw the following prompts:
 
-<pre dir="ltr">jetty.ssl.password :
+```
+jetty.ssl.password :
 jetty.ssl.keypassword :
-</pre>
+```
 
 Ahah! Google does find [something relevant](https://community.smartbear.com/t5/SoapUI-Open-Source/prompt-for-jetty-ssl-username-and-password-in-stdout-when/m-p/7576) there.
 
@@ -46,10 +47,10 @@ HTTP Monitor needs its own SSL certificate (private key) and KeyStore in order t
 
 So again using keytool (or ikeyman), this time to generate a private/public key certificate pair with the alias "jetty", create the KeyStore that is referenced in the **HTTP tunnel - KeyStore**, **Password**, and **KeyPassword** fields. (Note the two properties listed in the prompts above.) Here's the keytool command I actually used:
 
-<pre dir="ltr">jre\bin\keytool -genkeypair -alias jetty -keystore soapui.jks</pre>
+`jre\bin\keytool -genkeypair -alias jetty -keystore soapui.jks`
 
 Now complete the remaining Security fields and click "OK":
 
-[![image](https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor3.jpg)](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/soapuitcpmonitor3.jpg)
+[![image](/assets/soapuitcpmonitor3.jpg)](/assets/soapuitcpmonitor3.jpg)
 
 You'll have an SSL Tunnel listening on your local port, and you'll be able to see SOAP requests and responses sent through that local URL.
