@@ -9,9 +9,9 @@ show_excerpts: true
 theme: minima
 
 rss: rss
-social:
-  linkedin: dougbreaux
-  github: dougbreaux
+github_username: dougbreaux
+linkedin_username: dougbreaux
+stackoverflow_username: dbreaux
 
 paginate: 15
 
