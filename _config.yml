@@ -9,8 +9,9 @@ show_excerpts: true
 theme: minima
 
 rss: rss
-linkedin: dougbreaux
-social.github: dougbreaux
+social:
+  linkedin: dougbreaux
+  github: dougbreaux
 
 paginate: 15
 
