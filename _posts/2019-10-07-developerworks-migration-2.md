@@ -8,4 +8,4 @@ Looks like the sunset of this platform is back "on" again. To be shut down Decem
 
 Back to the drawing board.
 
-[https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Migration_Backup_of_Developer_Works_Blog](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Migration_Backup_of_Developer_Works_Blog)
+[Migration/Backup of DeveloperWorks Blog]({% post_url 2018-09-25-developerworks-blog-migration %})
