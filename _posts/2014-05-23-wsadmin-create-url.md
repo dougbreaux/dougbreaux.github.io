@@ -8,6 +8,6 @@ Yes, it might be nice to have it take a command-line pair as well. And/or a comm
 
 But those will be exercises for another day for me :-)
 
-See [createUrls.py](https://www.ibm.com/developerworks/community/files/app#/file/476eea57-13c1-4832-8860-c55efe1f53da)
+See [createUrls.py](https://github.com/dougbreaux/websphere/blob/master/createUrls.py)
 
 Edit the list of name/url pairs in the file. Uses the default URL Provider, at the Cell level, and sets the JNDI name to "url/name".
