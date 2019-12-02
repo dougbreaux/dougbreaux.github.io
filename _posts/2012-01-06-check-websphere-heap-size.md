@@ -2,7 +2,7 @@
 title: wsadmin Script to check the JVM heap size of a WebSphere Server
 tags: [script,jvm,websphere,heap,jython,wsadmin]
 ---
-In response to [this StackOverflow question](http://stackoverflow.com/questions/8754185/how-to-lookup-heap-usage-for-websphere), here's [a simple Jython wsadmin script](https://www.ibm.com/developerworks/mydeveloperworks/files/app/person/0100002GMN/file/3a25e372-7229-479d-a9a2-2f2684b64b84) which will display the JVM min and max heap sizes for the specified Application Server.
+In response to [this StackOverflow question](http://stackoverflow.com/questions/8754185/how-to-lookup-heap-usage-for-websphere), here's [a simple Jython wsadmin script](https://github.com/dougbreaux/websphere/blob/master/getJvmHeap.py) which will display the JVM min and max heap sizes for the specified Application Server.
 
 ```shell
 # Usage: wsadmin -f getJvmHeap.py server  
