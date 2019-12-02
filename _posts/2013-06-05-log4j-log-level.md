@@ -38,7 +38,7 @@ Then in the Development and Test environments, for each JEE Server JVM, add a Sy
 
 In WebSphere Application Server (at least v6.1 - I'm not looking at a newer server at the moment), this property should be added under **WebSphere Application Servers** > **server** > **Process Definition** > **Java Virtual Machine** > **Custom Properties** > Add
 
-It can also be added to all servers at once using [this wsadmin script](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/wasadmin_script_to_set_websphere_jvm_properties7).
+It can also be added to all servers at once using [this wsadmin script]({% post_url 2011-02-18-wsadmin-jvm-properties.html%}).
 
 ## Liberty
 
