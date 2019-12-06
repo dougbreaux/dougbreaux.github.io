@@ -64,3 +64,8 @@ us.ibm.com. IN TXT "v=spf1 ip4:32.97.182.0/24 ip4:32.97.110.0/24 a:d25xlcore010.
 Note the difference in the "all" clauses in the previous two examples. "-all" (hyphen) means to treat emails from all (other) senders as a "hard FAIL". "~all" (tilde) means to treat them as a "SOFTFAIL". Note that [Google.com's SPF record](http://dnsquery.org/dnsquery/google.com/TXT) and [Microsoft.com's SPF record](http://dnsquery.org/dnsquery/microsoft.com/TXT) also use the SOFTFAIL default.
 
 SOFTFAIL is theoretically intended as a transitional setting while you're testing out the implications of your SPF record/policy, with the recommendation that recipients accept the email but "mark" them in some way. But based on the noted use of that SOFTFAIL indicator by those large, savvy domains, I'd say that Hard FAILS probably reject too many real-world uses today. (I suspect the forwarding scenario described above as one of the main such problematic uses.)
+
+### Updates
+
+* _Dec 17 2014_ Interesting, just noticed today that microsoft.com now has a "hard fail" default on its SPF record. Wonder what that signifies in terms of current SPF support/practices... (google.com and ibm.com are still SOFTFAIL)
+* _Apr 22 2016_ Just checked and noticed today that ibm.com now has `v=spf1 mx include:zuora.com -all`
