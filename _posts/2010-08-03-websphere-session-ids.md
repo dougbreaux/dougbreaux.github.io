@@ -8,58 +8,33 @@ During investigation of some intermittent problems in one of our web application
 
 In a clustered environment, the JSESSIONID cookie is composed of the core Session ID and a few other components. Here's an example:
 
-<pre>JSESSIONID=0000A2MB4IJozU_VM8IffsMNfdR:v544d0o0</pre>
+`JSESSIONID=0000A2MB4IJozU_VM8IffsMNfdR:v544d0o0`
 
 <table width="50%" border="1">
-
 <thead>
-
 <tr>
-
 <td>Component</td>
-
 <td>Example value</td>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td>Cache ID</td>
-
 <td>0000</td>
-
 </tr>
-
 <tr>
-
 <td>Session ID</td>
-
 <td>A2MB4IJozU_VM8IffsMNfdR</td>
-
 </tr>
-
 <tr>
-
 <td>Separator</td>
-
 <td>:</td>
-
 </tr>
-
 <tr>
-
 <td>Clone ID or Partition ID</td>
-
 <td>v544d0o0</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 ### Cache ID
@@ -67,47 +42,26 @@ In a clustered environment, the JSESSIONID cookie is composed of the core Sessio
 It's still unclear to me what the different values mean here, but searching our Proxy logs indicates that the vast majority of our Sessions, the Cache ID is 0001\. For instance, a search of one day's log around 17:00 indicates the following number of cookies which contained a particular Cache ID:
 
 <table width="50%" border="1">
-
 <thead>
-
 <tr>
-
 <td>Cache ID</td>
-
 <td>Hit count</td>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td>0000</td>
-
 <td>4479</td>
-
 </tr>
-
 <tr>
-
 <td>0001</td>
-
 <td>223662</td>
-
 </tr>
-
 <tr>
-
 <td>0002</td>
-
 <td>191</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 For a particular Session ID, the Cache ID can definitely change mid-session, without any other changes. In particular, without the Clone/Partition ID changing. This does not indicate a switch to another Cluster member, but I don't know exactly what it does indicate. Based on the relative loads of our various systems, it seems possible that changing Cache IDs only occurs under heavy loads.
@@ -144,7 +98,7 @@ If on a subsequent request the specified cluster member is unavailable, the plug
 
 If a new cluster member is able to resume the existing Session, it will append its own Clone/Partition ID to the existing JSESSIONID cookie. For instance:
 
-<pre>JSESSIONID=0000A2MB4IJozU_VM8IffsMNfdR:v544d0o0:v544d031</pre>
+`JSESSIONID=0000A2MB4IJozU_VM8IffsMNfdR:v544d0o0:v544d031`
 
 Now the plug-in knows that 2 different cluster members could potentially service this Session. If the original member becomes available again, the Session will switch back to it.
 
@@ -164,3 +118,9 @@ Finally, note that according to the [System Management Redbook](http://www.redbo
 *   [InfoCenter section on HTTP Session problems](http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.nd.multiplatform.doc/info/ae/ae/rtrb_httpsessprobs.html)
 *   [PK83788: INCORRECT HANDLING OF PARTITION TABLES BY PLUGIN](http://www-01.ibm.com/support/docview.wss?uid=swg1PK83788)
 *   [PK48101: NEWLY SPAWNED WEBSERVER PROCESSES BREAK SESSION AFFINITY WHEN MEMORY-TO-MEMORY PERSISTENCE IS CONFIGURED](http://www-01.ibm.com/support/docview.wss?rs=180&uid=swg1PK48101)
+
+## Update
+
+_Feb 6 2012_ BTW, we recently noticed a specific case where the Cache ID changed for a Session: when the Session hadn't been accessed in a long time. In fact, the subsequent access was right before the 30-minute timeout would have triggered.
+
+One interesting behavior we observed in this case was that an object on the Session which we had been comparing for identity-equivalence (== comparison) was no longer equivalent after the Cache ID changed. We needed to update our code to use .equals() instead (which we should have been using the in the first place, anyway).
