@@ -75,3 +75,8 @@ Our partner appears to be using a C# .NET client, and even after he had success 
 “The server committed a protocol violation. Section=ResponseStatusLine”
 
 [Apparently this is a fairly common problem](https://www.google.com/search?q=the+server+committed+a+protocol+violation.+section%3Dresponsestatusline&ie=utf-8&oe=utf-8), and thankfully, one of the simplest [suggested resolutions](http://stackoverflow.com/questions/2482715/the-server-committed-a-protocol-violation-section-responsestatusline-error) to this, setting `KeepAlive` to `false`, resolved it.
+
+### Later notes
+
+* Regarding IE behavior, also see URLACTION_HTML_INCLUDE_FILE_PATH at https://msdn.microsoft.com/en-us/library/ms537178(v=vs.85).aspx (_Jan 3 2018_)
+* "Wayback machine" link to original IE full-path issue. Seems to redirect to a generic MDN page now, not describing that IE-specific behavior: https://web.archive.org/web/20170930214816/https://msdn.microsoft.com/en-us/library/ms535128(v=vs.85).aspx (_Jan 3 2018_)
