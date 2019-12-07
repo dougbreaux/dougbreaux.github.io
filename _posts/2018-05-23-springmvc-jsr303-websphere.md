@@ -64,7 +64,7 @@ _Caveat: Maybe there's a better way to do this. Readers, feel free to point me t
 
 #### Side Note
 
-Incidentally, when I use [this simple JSP](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/jndi_lookup_tester2) to see what the actual WebSphere-provided ValidatorFactory is, the result is <span style="font-family:courier new,courier,monospace;">org.apache.bval.jsr303.ApacheValidatorFactory</span>.
+Incidentally, when I use [this simple JSP]({% post_url 2011-05-24-jndi-lookup-tester %}) to see what the actual WebSphere-provided ValidatorFactory is, the result is `org.apache.bval.jsr303.ApacheValidatorFactory`.
 
 Now, to _use_ the validation and ensure it actually works.
 
@@ -124,4 +124,4 @@ Content-Type: text/html;charset=ISO-8859-1
 ...  
 Error 400: SRVE0295E: Error reported: 400
 ````
-So [in my next post, I describe a Spring MVC way to improve on that](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Spring_MVC_and_JSR_303_Validation_error_customization).
+So [in my next post, I describe a Spring MVC way to improve on that]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
