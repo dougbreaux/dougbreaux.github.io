@@ -19,7 +19,7 @@ print AdminConfig.show(jvm)
 print AdminConfig.attributes('JavaVirtualMachine')
 ```
 
-You can see where I previously used this approach [to create JVM Custom Properties for Application Servers](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/entry/wasadmin_script_to_set_websphere_jvm_properties7) and [to determine the (configured) maximum heap for a particular Application Server](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/entry/wsadmin_script_to_check_the_jvm_heap_size_of_a_websphere_server1). (I'll return to that latter case later.)
+You can see where I previously used this approach [to create JVM Custom Properties for Application Servers]({% post_url 2011-02-18-wsadmin-jvm-properties%}) and [to determine the (configured) maximum heap for a particular Application Server]({% post_url 2012-01-06-check-websphere-heap-size %}). (I'll return to that latter case later.)
 
 #### AdminControl
 
