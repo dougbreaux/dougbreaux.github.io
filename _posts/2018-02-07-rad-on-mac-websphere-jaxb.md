@@ -2,7 +2,7 @@
 title: "RAD on Mac: WebSphere and JAXB"
 tags: [ websphere,mac, jaxb, rad, liberty ]
 ---
-After [getting RAD running on my MacBook](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Running_RAD_on_a_Mac), I hit [a couple of issues trying to generate JAXB classes from an XML Schema](https://developer.ibm.com/answers/questions/429511/generate-java-classes-from-xsd-in-rad-on-mac.html).
+After [getting RAD running on my MacBook]({% post_url 2018-02-07-rad-on-mac %}), I hit [a couple of issues trying to generate JAXB classes from an XML Schema](https://developer.ibm.com/answers/questions/429511/generate-java-classes-from-xsd-in-rad-on-mac.html).
 
 While that second link really contains all the crucial information on those issues, I thought I'd also post it here.
 
