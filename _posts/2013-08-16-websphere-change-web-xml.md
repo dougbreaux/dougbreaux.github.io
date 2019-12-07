@@ -15,5 +15,3 @@ However, for web.xml, the copy that resides under this location does not actuall
 _**Update**_: it appears that in web application 3.0 web.xml files, there can be a [web_merged.xml file](http://www-01.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.base.doc/ae/crun_app_upgrade.html) which also must be edited to make changes.
 
 Also see this StackOverflow question: [Websphere application modify web.xml doesn't work](http://stackoverflow.com/questions/29536294/websphere-application-modify-web-xml-doesnt-work)
-
-<span class="min-tags" role="list">Tags:  <span role="listitem">[web.xml](https://www.ibm.com/developerworks/community/blogs/Dougclectica?tags=web.xml&lang=en "web.xml")</span> <span role="listitem">[websphere](https://www.ibm.com/developerworks/community/blogs/Dougclectica?tags=websphere&lang=en "websphere")</span></span>
