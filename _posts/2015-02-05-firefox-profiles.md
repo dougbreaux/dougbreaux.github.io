@@ -2,7 +2,7 @@
 title: Firefox Tip - Using Multiple Profiles
 tags: [ plugins, firefox, extensions, add-ons ]
 ---
-![image](https://mozorg.cdn.mozilla.net/media/img/styleguide/identity/firefox/usage-logo.png?2013-06){float:left;}
+![image](https://mozorg.cdn.mozilla.net/media/img/styleguide/identity/firefox/usage-logo.png?2013-06)
 
 Stumbled across this write-up I'd done years ago for my colleagues. Nothing revolutionary about it, but I thought I'd share in case others who see this are unaware of the capability.
 
