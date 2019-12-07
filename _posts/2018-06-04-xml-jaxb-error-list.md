@@ -2,7 +2,7 @@
 title: XML JAXB Response List of Errors
 tags: [ springmvc, xml, rest, jaxb, spring ]
 ---
-Minor addition to [Spring MVC and JSR 303 Validation error customization](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Spring_MVC_and_JSR_303_Validation_error_customization) and [Error pattern for REST/HTTP APIs](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Error_pattern_for_REST_HTTP_APIs).
+Minor addition to [Spring MVC and JSR 303 Validation error customization]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}) and [Error pattern for REST/HTTP APIs]({% post_url 2018-05-29-rest-error-pattern %}).
 
 ### Unacceptable XML
 
