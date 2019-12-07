@@ -13,7 +13,7 @@ print 'initialHeapSize: ' + AdminConfig.showAttribute(jvm, 'initialHeapSize')
 print 'maximumHeapSize: ' + AdminConfig.showAttribute(jvm, 'maximumHeapSize')
 ```
 
-**Update**: the above only obtains the heap size if a custom value has been explicitly configured. From [this other post](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/entry/miscellaneous_wsadmin35), here's a mechanism which will obtain the maximum heap size otherwise (note there doesn't appear to be an attribute to obtain the minimum heap size):
+**Update**: the above only obtains the heap size if a custom value has been explicitly configured. From [this other post]({% post_url 2012-08-24-misc-wsadmin%}), here's a mechanism which will obtain the maximum heap size otherwise (note there doesn't appear to be an attribute to obtain the minimum heap size):
 
 ```shell
 jvmName = AdminControl.completeObjectName('WebSphere:type=JVM,process=MyServerName,*')  
