@@ -20,4 +20,4 @@ If you haven't already installed the [monitor-1.0 feature](https://www.ibm.com/s
 
 `/opt/ibm/liberty/wlp/bin/installUtility install monitor-1.0`
 
-(See [Editing files in Liberty Docker containers](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Editing_files_in_Liberty_Docker_containers_e_g_Trace_logging) if you're wanting to do this in a running Docker Liberty container.)
+(See [Editing files in Liberty Docker containers]({% post_url 2019-03-19-liberty-docker-editing-files %}) if you're wanting to do this in a running Docker Liberty container.)
