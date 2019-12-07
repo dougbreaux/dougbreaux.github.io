@@ -2,7 +2,8 @@
 title: Firefox Tip - Using Multiple Profiles
 tags: [ plugins, firefox, extensions, add-ons ]
 ---
-<img style="{float:left;}" src="https://mozorg.cdn.mozilla.net/media/img/styleguide/identity/firefox/usage-logo.png?2013-06">
+![image](https://mozorg.cdn.mozilla.net/media/img/styleguide/identity/firefox/usage-logo.png?2013-06){float:left;}
+
 Stumbled across this write-up I'd done years ago for my colleagues. Nothing revolutionary about it, but I thought I'd share in case others who see this are unaware of the capability.
 
 Firefox stores user-specific data in [Profiles](https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data). Bookmarks, settings, add-ons, etc. By default, Firefox creates and uses just one Profile, and you might not even know of its existence. But you can create and explicitly run more than one Profile, each with different configurations, and each running in a separate process. (On your traditional workstation, that is. Not, as far as I know, on a "mobile" device.) I typically use 2 or 3 Profiles for different purposes.
