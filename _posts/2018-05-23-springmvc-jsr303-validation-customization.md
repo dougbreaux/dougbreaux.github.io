@@ -2,7 +2,7 @@
 title: Spring MVC and JSR 303 Validation error customization
 tags: [	jsr303, springmvc, spring ]
 ---
-Brief follow-up to [Spring MVC, JSR 303 Validation, and WebSphere](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Spring_MVC_JSR_303_Validation_and_WebSphere).
+Brief follow-up to [Spring MVC, JSR 303 Validation, and WebSphere]({% post_url 2018-05-23-springmvc-jsr303-websphere %}).
 
 Wanting to improve on the default error messages. The article [Spring From the Trenches: Adding Validation to a REST API](https://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-adding-validation-to-a-rest-api/) was a detailed help. [Error Handling for REST with Spring](http://www.baeldung.com/exception-handling-for-rest-with-spring) also provides a succinct overview of the different approaches.
 
