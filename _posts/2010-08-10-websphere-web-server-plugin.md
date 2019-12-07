@@ -22,7 +22,7 @@ Finally, it contains the "transport" information used to forward matched request
 
 "Affinity" is the notion of sending a user to the same Cluster member (application server JVM) for each subsequent request after the initial one, if the application uses HTTP Sessions. This behavior is required by the JEE specification, and in WebSphere is the responsibility of the Web Server plugin. WebSphere maintains this affinity by appending a "Clone ID" or "Partition ID" to the "Session ID", which the plugin then compares against its configuration to correctly route subsequent requests.
 
-For further detail on the Session ID mechanics, see [this post](https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/entry/websphere_session_ids22?lang=en).
+For further detail on the Session ID mechanics, see [this post]({% post_url 2010-08-03-websphere-session-ids %}).
 
 New users, those without an existing Session, are distributed to Cluster members in either a weighted round-robin fashion or a random fashion. Round-robin is the default, and it will decrement each cluster member's "weight" each time it sends it a new request, until all members are less than zero, then they will all be reset to their starting values.
 
