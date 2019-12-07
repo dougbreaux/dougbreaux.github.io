@@ -13,15 +13,15 @@ Liberty is the newer, lighter-weight Java EE WebSphere server. That also gets ne
 
 A few links for reference:
 
-*   #### [Traditional WebSphere or Liberty: how to choose? - WASdev](https://w3-connections.ibm.com/dogear/click?link=d5f74145-c5e4-4271-87d7-698807ea3b1a "https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/")
+*   #### [Traditional WebSphere or Liberty: how to choose? - WASdev](https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/)
 
-*   #### [Move applications to Liberty using the Migration Toolkit - WASdev](https://w3-connections.ibm.com/dogear/click?link=9fca101f-415a-4320-b12c-7a1d656ad541 "https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/")
+*   #### [Move applications to Liberty using the Migration Toolkit - WASdev](https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/)
 
 ## Conversion
 
 Having decided to at least try to get some experience with Liberty, the next step was the learning curve of how to accomplish the same things we do under tWAS. And confirm that we actually _can_ do so. These are my notes from this exercise, for one of our representative applications.
 
-This application is a Java EE 6, Web 3.0 application with some [Apache Wink "JAX-RS" client code](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/A_JSON_REST_client_in_WebSphere_8_5_Full_Profile) (before the JAX-RS spec included client APIs), including the dependence on a matching version of JAXB..
+This application is a Java EE 6, Web 3.0 application with some [Apache Wink "JAX-RS" client code]({% post_url 2016-03-04-websphere8.5-json-rest-client.md %}) (before the JAX-RS spec included client APIs), including the dependence on a matching version of JAXB..
 
 ## server.xml
 
@@ -140,7 +140,7 @@ For kicking off asynchronous requests.
 
 ### `<logging>`
 
-For [tracing Wink messaging](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Tracing_JAX_RS_client_messages_in_WebSphere).
+For [tracing Wink messaging]({% post_url 2016-03-01-websphere-trace-jax-rs %}).
 ```xml
     <logging traceSpecification="*=info: org.apache.wink.client.internal.log.*=all: org.apache.wink.client.internal.ResourceImpl=all"/>
 ```
@@ -149,7 +149,7 @@ For [tracing Wink messaging](https://www.ibm.com/developerworks/community/blogs/
 
 I actually didn't add this manually, but let the RAD/Eclipse WDT tooling add it, by using the "Add and Remove" right-click menu option on the server.
 
-However, I did manually add the <classloader> element, so that I could add "third-party" libraries to the default library types made available to the application. Again, so that I could use the Apache Wink classes. (The other 4 were there by default after adding the <span style="font-family:courier new,courier,monospace;"><classloader</span>> from the RAD/Eclipse <span style="font-family:courier new,courier,monospace;">server.xml</span> editor.)
+However, I did manually add the <classloader> element, so that I could add "third-party" libraries to the default library types made available to the application. Again, so that I could use the Apache Wink classes. (The other 4 were there by default after adding the `<classloader>` from the RAD/Eclipse `server.xml` editor.)
 ```xml
     <webApplication contextRoot="/myapp" id="My Application" location="MyApplication.war" name="MY Application">  
         <classloader apiTypeVisibility="spec,ibm-api,api,stable,third-party"></classloader>  
@@ -162,6 +162,6 @@ However, I did manually add the <classloader> element, so that I could add "thir
 
 This Liberty file contains ... well... JVM-level options. For this app, a couple of System environment properties. e.g.:
 
-[`-Dlog4j.logLevel=DEBUG`](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/controlling_log4j_log_level_at_runtime)
+[`-Dlog4j.logLevel=DEBUG`]({% post_url 2013-06-05-log4j-log-level %})
 
 We often set our JVM Time Zone to UTC, which I think would also be done here.
