@@ -21,7 +21,7 @@ A few links for reference:
 
 Having decided to at least try to get some experience with Liberty, the next step was the learning curve of how to accomplish the same things we do under tWAS. And confirm that we actually _can_ do so. These are my notes from this exercise, for one of our representative applications.
 
-This application is a Java EE 6, Web 3.0 application with some [Apache Wink "JAX-RS" client code]({% post_url 2016-03-04-websphere8.5-json-rest-client.md %}) (before the JAX-RS spec included client APIs), including the dependence on a matching version of JAXB..
+This application is a Java EE 6, Web 3.0 application with some [Apache Wink "JAX-RS" client code]({% post_url 2016-03-04-websphere8.5-json-rest-client %}) (before the JAX-RS spec included client APIs), including the dependence on a matching version of JAXB..
 
 ## server.xml
 
