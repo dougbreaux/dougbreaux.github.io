@@ -2,7 +2,7 @@
 title: Jackson JSON, "map" properties in WebSphere 8.5.5
 tags: [map, wink, websphere, json, jackson, rest, java ]
 ---
-Minor follow-up to [A JSON REST client in WebSphere 8.5](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/A_JSON_REST_client_in_WebSphere_8_5_Full_Profile)
+Minor follow-up to [A JSON REST client in WebSphere 8.5]({% post_url 2016-03-04-websphere8.5-json-rest-client %})
 
 I needed to serialize/deserialize name-value properties, ideally into a Java Map. I had hoped this would automatically work, but it does not.
 
@@ -50,4 +50,4 @@ String id = myJsonResponseBean.getProperties().get("id");
 
 *   Apparently only one JSON name/value field can be mapped in this way. But this is sufficient for my needs.
 *   Regrettably, this is yet another dependency on proprietary APIs. I usually try to avoid those at all costs, but this JSON Client under WebSphere 8.5.5 now has at least 3 of them. There doesn't appear to be an alternative at this point.
-*   Surprisingly, [my earlier technique](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/A_JSON_REST_client_in_WebSphere_8_5_Full_Profile) of adding the `@XmlType` and `@JsonIgnoreProperties(ignoreUnknown = true)` annotations to a JsonBase class did not work here. I had to explicitly add those annotations to this POJO class.
+*   Surprisingly, [my earlier technique]({% post_url 2016-03-04-websphere8.5-json-rest-client %}) of adding the `@XmlType` and `@JsonIgnoreProperties(ignoreUnknown = true)` annotations to a JsonBase class did not work here. I had to explicitly add those annotations to this POJO class.
