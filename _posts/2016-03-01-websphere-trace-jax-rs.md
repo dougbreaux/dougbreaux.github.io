@@ -10,4 +10,4 @@ Through just a little trial-and-error, these trace strings get me the basic URL 
 
 Also See [MustGather: Web Services engine and tooling problems for WebSphere Application Server](http://www-01.ibm.com/support/docview.wss?uid=swg21198363) > **Collecting Data Manually** > **Enabling Web service trace for WebSphere Application Server V8.5, 8.0, V7.0, V6.1**
 
-(_Similar, but more detailed, post about [tracing JAX-WS messages](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/capturing_web_service_jax_ws_messages_in_websphere)._)
+(_Similar, but more detailed, post about [tracing JAX-WS messages]({% post_url 2014-09-04-websphere-jax-ws-tracing %})._)
