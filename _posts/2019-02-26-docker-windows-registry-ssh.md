@@ -4,7 +4,7 @@ tags: [ ssh, docker, windows ]
 ---
 I've been working with Docker lately (for WebSphere Liberty).
 
-More I probably will write about that later, but this brief post is about pushing a Docker image to a private local registry that I can only reach through a [2-hop SSH tunnel](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/SSH_tips).
+More I probably will write about that later, but this brief post is about pushing a Docker image to a private local registry that I can only reach through a [2-hop SSH tunnel]({% post_url 2018-02-01-ssh-tips %}).
 
 It turns out unlike "native" Docker on Linux, the Docker for Windows daemon that push/pull uses isn't using the same networking that the containers are. Looks like I have to get to the underlying VM, but [can't do this directly](https://blog.jongallant.com/2017/11/ssh-into-docker-vm-windows/):
 
