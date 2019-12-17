@@ -18,7 +18,7 @@ But after looking more at other APIs, and thinking about how a caller would most
 
 ## Single or Multiple Errors?
 
-I thought the norm I'd seen, as a caller, was always a single error returned, so this is what I implemented. But when adding some more sophisticated input field validation ([via JSR 303 annotations, in my case](https://www.ibm.com/developerworks/community/blogs/Dougclectica/entry/Spring_MVC_JSR_303_Validation_and_WebSphere)), I remembered that as the perfect use case for multiple errors returned together. Like input validation on a web page, so you don't have to correct one-at-a-time.
+I thought the norm I'd seen, as a caller, was always a single error returned, so this is what I implemented. But when adding some more sophisticated input field validation ([via JSR 303 annotations, in my case]({% post_url 2018-05-23-springmvc-jsr303-websphere %})), I remembered that as the perfect use case for multiple errors returned together. Like input validation on a web page, so you don't have to correct one-at-a-time.
 
 That presents 3 options:
 
