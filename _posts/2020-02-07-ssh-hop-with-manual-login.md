@@ -1,7 +1,6 @@
 ---
 title: SSH Tunneling with a manual first hop
 tags: [ ssh, tunnel, 2fa, keys, pci, duo, putty, windows]
-published: true
 ---
 Follow-up to:
 1. [SSH key authentication with PuTTY]({% post_url 2011-02-03-ssh-key-authentication-with-putty %})
