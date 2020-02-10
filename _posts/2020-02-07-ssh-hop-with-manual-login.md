@@ -1,14 +1,6 @@
 ---
 title: SSH Tunneling with a manual first hop
-tags:
-  - ssh
-  - tunnel
-  - 2fa
-  - keys
-  - pci
-  - duo
-  - putty
-  - windows
+tags: [ ssh, tunnel, 2fa, keys, pci, duo, putty, windows]
 published: true
 ---
 Follow-up to:
