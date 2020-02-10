@@ -1,6 +1,10 @@
 ---
 title: Spring MVC and JSR 303 Validation error customization
-tags: [	jsr303, springmvc, spring ]
+tags:
+  - jsr303
+  - springmvc
+  - spring
+published: true
 ---
 Brief follow-up to [Spring MVC, JSR 303 Validation, and WebSphere]({% post_url 2018-05-23-springmvc-jsr303-websphere %}).
 
@@ -29,7 +33,7 @@ Which can generate a response like:
 [  
       {  
       "code": 400,  
-      "message": "applicationId: Applicat<wbr>ion ID must be between 1 and 30 characters"  
+      "message": "applicationId: Application ID must be between 1 and 30 characters"  
    },  
       {  
       "code": 400,  
