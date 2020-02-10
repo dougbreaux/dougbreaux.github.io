@@ -2,6 +2,10 @@
 title: SSH Tunneling with a manual first hop
 tags: [ ssh, tunnel, 2fa, keys, pci, duo, putty, windows]
 ---
+Follow-up to:
+1. [SSH key authentication with PuTTY]({% post_url 2011-02-03-ssh-key-authentication-with-putty %})
+2. [SSH key authentication with PuTTY, Part 2, Tunneling with Plink]({% post_url 2011-02-03-tunneling-with-plink %})
+3. [SSH Tips]({% post_url 2018-02-01-ssh-tips %})
 
 What if that first hop doesn't allow you to background tunnel through it? Either because SSH key authentication isn't enabled, or because it uses a 2FA solution that requires manual interaction?
 
