@@ -33,3 +33,8 @@ plugins:
  - jekyll-seo-tag
  # for remote themes
  #- jekyll-remote-theme
+
+prose:
+  rooturl: '_posts'
+  siteurl: 'https://dougbreaux.github.io/'
+  media: 'assets'
