@@ -46,8 +46,19 @@ Now, here I'm using the same local proxy "plink" approach as described earlier, 
 The small addition needed to the prior plink command was the -P one for the custom port:
 
 ```
-c:\Program Files (x86)\PuTTY\plink %proxyhost -P %proxyport -nc %host:%port
+c:\Program Files (x86)\PuTTY\plink -l %user %proxyhost -P %proxyport -nc %host:%port
 ```
+### Authentication to the Tunnel/Proxy host
+
+You have to specific how to authenticate to your tunnel server when proxying through it. Either:
+1. the above `-l %user%` has to be specified, with the _Username_ field filled in, and you have to have SSH key authentication enabled on the tunnel/proxy server, with Pageant running locally, **or**
+2. the _Username_ and _Password_ fields have to both be filled in
+
+#### PuTTY Default Settings session
+
+I also discovered, BTW, that if you have just one user ID you use on every system, and if you specify that user ID in the special PuTTY "Default Settings" session's Connection > Data > Auto-login username field, this automatically supplies your user name in place of having to add the `plink ... -l` option at all. 
+
+This fact has thrown me off a number of times when something works for me but not for a colleague who hasn't set up her Default Settings that way.
 
 ## Single Session with many tunneled ports
 
@@ -62,6 +73,8 @@ Same proxy setup as above, just this time we're also going to store several tunn
 For instance, below I have a DB2 port tunneled on 60000, an HTTP port tunneled on 8081->8080, a Dynamic Socks tunnel on 8888, and I'm about to add a Windows Remote Desktop port on 3390->3389.
 
 ![putty-proxy-tunnels-tunnels.png](/assets/putty-proxy-tunnels-tunnels.png)
+
+**NOTE** you _could_ run the dynamic tunnel - my 8888 - up in the initial "Jump" connection instead. If you only need SOCKS connectivity to things the _jump host_ can reach. As opposed to things the _tunnel host_ can also reach.
 
 ## Notes
 
