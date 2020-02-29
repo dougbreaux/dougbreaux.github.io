@@ -4,7 +4,7 @@ tags: [ curl, jars, central, opensource, public, maven, libraries ]
 ---
 Maven Central jars can be downloaded from:
 
-[http://repo1.maven.org/maven2/](http://repo1.maven.org/maven2/)
+[https://repo1.maven.org/maven2/](https://repo1.maven.org/maven2/)
 
 And easily with curl, say for Jackson Databind:
 
