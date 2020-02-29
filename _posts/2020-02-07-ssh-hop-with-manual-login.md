@@ -50,13 +50,13 @@ c:\Program Files (x86)\PuTTY\plink -l %user %proxyhost -P %proxyport -nc %host:%
 ```
 ### Authentication to the Tunnel/Proxy host
 
-You have to specific how to authenticate to your tunnel server when proxying through it. Either:
-1. the above `-l %user%` has to be specified, with the _Username_ field filled in, and you have to have SSH key authentication enabled on the tunnel/proxy server, with Pageant running locally, **or**
+You have to specific how to authenticate to your _tunnel host_ when proxying through it. Either:
+1. the above `-l %user%` has to be specified, with the _Username_ field filled in, and you have to have SSH key authentication enabled on the _tunnel host_, with Pageant running locally, **or**
 2. the _Username_ and _Password_ fields have to both be filled in
 
 #### PuTTY Default Settings session
 
-I also discovered, BTW, that if you have just one user ID you use on every system, and if you specify that user ID in the special PuTTY "Default Settings" session's Connection > Data > Auto-login username field, this automatically supplies your user name in place of having to add the `plink ... -l` option at all. 
+I also discovered, BTW, that if you have just one user ID you use on every system, and if you specify that user ID in the special PuTTY "Default Settings" session's **Connection** > **Data** > **Auto-login username** field, this automatically supplies your user name in place of having to add the `plink ... -l` option at all. 
 
 This fact has thrown me off a number of times when something works for me but not for a colleague who hasn't set up her Default Settings that way.
 
