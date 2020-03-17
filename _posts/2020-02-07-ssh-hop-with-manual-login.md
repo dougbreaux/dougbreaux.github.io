@@ -11,6 +11,9 @@ What if that first hop doesn't allow you to background tunnel through it? Either
 
 Thanks to colleague Dan Patterson, I've got steps that work out almost as quickly/simply as I had before.
 
+* TOC
+{:toc}
+
 ## First hop with manual authentication and primary tunnel
 
 First, I'm opening a [PuTTY](https://www.putty.org/) session to the "jump" host where I have to both use a password rather than a key, and where I have to authorize 2FA through [Duo](https://duo.com/product/multi-factor-authentication-mfa/two-factor-authentication-2fa).
@@ -50,7 +53,7 @@ c:\Program Files (x86)\PuTTY\plink -l %user %proxyhost -P %proxyport -nc %host:%
 ```
 ### Authentication to the Tunnel/Proxy host
 
-You have to specific how to authenticate to your _tunnel host_ when proxying through it. Either:
+You have to specify how to authenticate to your _tunnel host_ when proxying through it. Either:
 1. the above `-l %user%` has to be specified, with the _Username_ field filled in, and you have to have SSH key authentication enabled on the _tunnel host_, with Pageant running locally, **or**
 2. the _Username_ and _Password_ fields have to both be filled in
 
@@ -70,7 +73,7 @@ I used a hardcoded destination in the _protected network_, but that's not requir
 
 Same proxy setup as above, just this time we're also going to store several tunnels to ports which are on different servers only accessible from the _protected network_. 
 
-For instance, below I have a DB2 port tunneled on 60000, an HTTP port tunneled on 8081->8080, a Dynamic Socks tunnel on 8888, and I'm about to add a Windows Remote Desktop port on 3390->3389.
+For instance, below I have a DB2 port tunneled on 60000, an HTTP port tunneled on 8081->8080, a Dynamic Socks tunnel on 8888, and I'm about to add a Windows Remote Desktop port on 3391->3389.
 
 ![putty-proxy-tunnels-tunnels.png](/assets/putty-proxy-tunnels-tunnels.png)
 
