@@ -32,6 +32,15 @@ Under **Connection**, I'm also setting a "keepalive" on this PuTTY session so th
 
 Login (to the _jump host_), fullfill the 2FA requirements, put the window somewhere you won't close it. (I also gave it a unique size and font color to remind myself that it's special.)
 
+### Trusting the _tunnel host_ SSH host key
+
+Note that if you've never connected directly from your local machine, through PuTTY/plink, to the _tunnel host_, you'll have to connect there first and (verify and) accept its host key. Start a command-line plink command to your `localhost:2222` equivalent:
+
+```shell
+plink -P 2222 localhost
+```
+You'll be prompted to trust the key presented. Once you do that, you don't need to continue the login, but now your PuTTY tunnels through this _tunnel host_ won't get stuck waiting for you to accept the host key.
+
 ## PuTTY Session for dynamic/on-the-fly to the _protected network_
 
 Now we can use the above connection to tunnel, in one step, to another host in the _protected network_ (technically, anything reachable from that _tunnel host_, including perhaps other hosts that only it can reach, like via a VPN).
@@ -42,7 +51,7 @@ I've created another PuTTY Session for this, with no hostname specified, so that
 
 I've named the Session "localhost 2222 proxy" to let me know that I'm going to be connecting through the above tunnel.
 
-Now, here I'm using the same local proxy "plink" approach as described earlier, but with the proxy host being said localhost:2222.
+Now, here I'm using the same local proxy "plink" approach [as described in my earlier post]({% post_url 2011-02-03-tunneling-with-plink %}), but with the proxy host being said localhost:2222.
 
 ![putty-proxy-proxy.png](/assets/putty-proxy-proxy.png)
 
@@ -55,7 +64,7 @@ c:\Program Files (x86)\PuTTY\plink -l %user %proxyhost -P %proxyport -nc %host:%
 
 You have to specify how to authenticate to your _tunnel host_ when proxying through it. Either:
 1. the above `-l %user%` has to be specified, with the _Username_ field filled in, and you have to have SSH key authentication enabled on the _tunnel host_, with Pageant running locally, **or**
-2. the _Username_ and _Password_ fields have to both be filled in
+2. the _Username_ and _Password_ fields have to both be filled in **and** `-pw %pass` must be added to the plink command as well. 
 
 #### PuTTY Default Settings session
 
@@ -79,6 +88,6 @@ For instance, below I have a DB2 port tunneled on 60000, an HTTP port tunneled o
 
 **NOTE** you _could_ run the dynamic tunnel - my 8888 - up in the initial "Jump" connection instead. If you only need SOCKS connectivity to things the _jump host_ can reach. As opposed to things the _tunnel host_ can also reach.
 
-## Notes
+## Bonus Tip
 
-_TODO: Discussion about PCI something-you-know/something-you-have_
+Again, plug for the super useful [SwitchyOmega](https://addons.mozilla.org/en-US/firefox/addon/switchyomega/) Firefox plugin for routing different hosts & networks through different proxies. Like the 8888 "dynamic port" SOCKS proxy we created above.
