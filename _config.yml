@@ -12,7 +12,7 @@ remote_theme: jekyll/minima
 
 rss: rss
 #github_username: dougbreaux
-social.github: dougbreaux
+site.minima.social_links.social.github: dougbreaux
 #linkedin_username: dougbreaux
 social.stackoverflow: dbreaux
 social.linkedin: dougbreaux
