@@ -13,7 +13,7 @@ remote_theme: jekyll/minima
 rss: rss
 
 minima:
-  social_links
+  social_links:
   - github: dougbreaux
   - stackoverflow: dbreaux
   - linkedin: dougbreaux
