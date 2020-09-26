@@ -13,10 +13,12 @@ remote_theme: jekyll/minima
 rss: rss
 #github_username: dougbreaux
 social.github: dougbreaux
-linkedin_username: dougbreaux
+#linkedin_username: dougbreaux
+social.stackoverflow: dbreaux
+social.linkedin: dougbreaux
 
-paginate: 15
-paginate_path: posts/page:num/
+#paginate: 15
+#paginate_path: posts/page:num/
 
 markdown: kramdown
 kramdown:
@@ -26,10 +28,10 @@ kramdown:
             line_numbers: false
 
 gems:
-  - jekyll-paginate
+#  - jekyll-paginate
 
 plugins:
- - jekyll-paginate
+# - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
  # for remote themes
