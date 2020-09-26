@@ -11,11 +11,15 @@ show_excerpts: true
 remote_theme: jekyll/minima
 
 rss: rss
+
+minima:
+  social_links
+  - github: dougbreaux
+  - stackoverflow: dbreaux
+  - linkedin: dougbreaux
+  
 #github_username: dougbreaux
-site.minima.social_links.github: dougbreaux
 #linkedin_username: dougbreaux
-social.stackoverflow: dbreaux
-social.linkedin: dougbreaux
 
 #paginate: 15
 #paginate_path: posts/page:num/
