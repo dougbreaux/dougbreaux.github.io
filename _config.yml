@@ -14,9 +14,9 @@ rss: rss
 
 minima:
   social_links:
-  - github: dougbreaux
-  - stackoverflow: dbreaux
-  - linkedin: dougbreaux
+    github: dougbreaux
+    stackoverflow: dbreaux
+    linkedin: dougbreaux
   
 #github_username: dougbreaux
 #linkedin_username: dougbreaux
