@@ -11,7 +11,8 @@ show_excerpts: true
 remote_theme: jekyll/minima
 
 rss: rss
-github_username: dougbreaux
+#github_username: dougbreaux
+social.github: dougbreaux
 linkedin_username: dougbreaux
 
 paginate: 15
