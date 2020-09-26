@@ -6,9 +6,9 @@ description: > # this means to ignore newlines until "show_excerpts:"
   Topics from my software development meanderings.
 show_excerpts: true
 
-theme: minima
+#theme: minima
 # to get latest master
-#remote_theme: jekyll/minima
+remote_theme: jekyll/minima
 
 rss: rss
 github_username: dougbreaux
