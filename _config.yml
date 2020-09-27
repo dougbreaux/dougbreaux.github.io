@@ -20,7 +20,7 @@ minima:
     stackoverflow: "796761"
     linkedin: dougbreaux
   
-paginate: 15
+#paginate: 15
 #paginate_path: _posts/page:num/
 
 markdown: kramdown
@@ -34,7 +34,7 @@ gems:
 #  - jekyll-paginate
 
 plugins:
- - jekyll-paginate
+# - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
  # for remote themes
