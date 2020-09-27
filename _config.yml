@@ -7,6 +7,9 @@ description: > # this means to ignore newlines until "show_excerpts:"
 show_excerpts: true
 
 #theme: minima
+#github_username: dougbreaux
+#linkedin_username: dougbreaux
+
 # to get latest master
 remote_theme: jekyll/minima
 
@@ -18,9 +21,6 @@ minima:
     stackoverflow: "796761"
     linkedin: dougbreaux
   
-#github_username: dougbreaux
-#linkedin_username: dougbreaux
-
 #paginate: 15
 #paginate_path: posts/page:num/
 
@@ -35,7 +35,7 @@ gems:
 #  - jekyll-paginate
 
 plugins:
-# - jekyll-paginate
+ - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
  # for remote themes
