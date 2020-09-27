@@ -21,7 +21,7 @@ minima:
     stackoverflow: "796761"
     linkedin: dougbreaux
   
-#paginate: 15
+paginate: 15
 #paginate_path: posts/page:num/
 
 markdown: kramdown
