@@ -30,6 +30,7 @@ public class CustomWebConfiguration extends WebMvcConfigurerAdapter {
     }
 }
 ```
+
 I had no success trying to get the `ObjectMapper` instance and calling its `enable()` method from XML, and apparently you can't mix and match the XML `<mvc:annotation-driven/>` with this Java Configuration object. But fortunately I was already doing the rest of my MVC Spring setup via annotations, using only `<context:component-scan />` to kick it off.
 
 (Yet another topic, we use XML configuration for the vast majority of our code, for a few reasons. First, historical and existing shared code. Second, I _like_ having all the configuration in just few places rather than spread out all over the code. Third, I try to keep Spring-specific references out of any code that doesn't already depend on Spring. Thus, we _do_ use Spring annotations in our Controller classes, which are, by definition, dependent on Spring MVC.)
