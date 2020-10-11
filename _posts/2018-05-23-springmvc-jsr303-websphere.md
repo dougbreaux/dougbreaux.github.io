@@ -6,7 +6,7 @@ tags: [ websphere, jsr-303, spring, jsr303, springmvc, validation ]
 
 ## Background
 
-We're using Spring (4.x) MVC Controllers in several of our applications, for [various](https://zeroturnaround.com/webframeworksindex/) reasons. I've found myself wanting to add basic JSR-303 validations to some of the submitted parameters or objects, and [earlier](https://www.ibm.com/developerworks/community/forums/html/threadTopic?id=ee47f46e-c56c-44e9-81be-0f94d4d3f1c5&ps=25) had [failed](https://stackoverflow.com/questions/45819588/jsr-303-validation-with-spring-mvc-on-websphere) to get this working under WebSphere.
+We're using Spring (4.x) MVC Controllers in several of our applications, for [various](https://web.archive.org/web/20181121133226/https://zeroturnaround.com/webframeworksindex/) reasons. I've found myself wanting to add basic JSR-303 validations to some of the submitted parameters or objects, and [earlier](https://www.ibm.com/developerworks/community/forums/html/threadTopic?id=ee47f46e-c56c-44e9-81be-0f94d4d3f1c5&ps=25) had [failed](https://stackoverflow.com/questions/45819588/jsr-303-validation-with-spring-mvc-on-websphere) to get this working under WebSphere.
 
 At that time, the need wasn't that great, so I just manually validated the single parameter and moved on.
 
