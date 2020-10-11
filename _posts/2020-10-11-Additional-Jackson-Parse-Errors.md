@@ -2,7 +2,7 @@
 title: Additional Handling of Jackson Parsing and Binding Errors
 tags: [ jackson, json, spring, springmvc, validation ]
 ---
-Brief follow-up to ({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
+Brief follow-up to [Spring MVC and JSR 303 Validation error customization]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
 
 In addition to the previously shown `@ExceptionHandler(MethodArgumentNotValidException.class)` method for handling JSR-303 Validation errors, we also want to handle JSON Parsing and Mapping errors by returning similarly helpful and clean JSON responses. 
 
