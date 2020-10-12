@@ -1,5 +1,5 @@
 ---
-title: Additional Handling of Jackson Parsing and Binding Errors
+title: Additional Handling of Jackson Parsing and Mapping Errors
 tags: [ jackson, json, spring, springmvc, validation ]
 ---
 Brief follow-up to [Spring MVC and JSR 303 Validation error customization]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
