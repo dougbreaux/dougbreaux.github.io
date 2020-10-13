@@ -34,6 +34,10 @@ kramdown:
 gems:
 #  - jekyll-paginate
 
+# fake Disqus so can do utterances comments without changing base Minima post.html
+disqus:
+  shortname: fake_disqus_utterances
+  
 plugins:
  - jekyll-paginate
  - jekyll-feed
