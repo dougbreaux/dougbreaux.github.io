@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Adding Comments to this Blog
 tags:
   - github
