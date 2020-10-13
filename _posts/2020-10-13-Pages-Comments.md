@@ -8,9 +8,9 @@ tags:
   - comments
   - utterances
 ---
-## Adding Comment Support to this Blog
+## Comment options
 
-After migration my Blog over here (from the defunct IBM DeveloperWorks site), I'd been lacking Search and Comments. I use the [Jekyll Minima theme](https://github.com/jekyll/minima), which has built-in support for Disqus comments, but when I finally decided to try that, I did a quick search on the Privacy implications (having noted that my Privacy add-ons block Disqus by default), and decided [I didn't want to use Disqus after all](https://fatfrogmedia.com/delete-disqus-comments-wordpress/).
+After migrating my Blog over here (from the defunct IBM DeveloperWorks site), I'd been lacking Search and Comments. I use the [Jekyll Minima theme](https://github.com/jekyll/minima), which has built-in support for Disqus comments, but when I finally decided to try that, I did a quick search on the Privacy implications (having noted that my Privacy add-ons block Disqus by default), and decided [I didn't want to use Disqus after all](https://fatfrogmedia.com/delete-disqus-comments-wordpress/).
 
 Various other options appeared in my searches, including [some](https://darekkay.com/blog/static-site-comments/) [comparisons](https://scottwestover.github.io/post/2020/01/swithcing-to-github-issues-for-comments/) of them. 
 
