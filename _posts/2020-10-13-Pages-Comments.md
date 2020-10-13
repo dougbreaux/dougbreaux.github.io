@@ -8,6 +8,8 @@ tags:
   - comments
   - utterances
 ---
+Adding comments to a GitHub Pages Jekyll Blog.
+
 ## Comment options
 
 After migrating my Blog over here (from the defunct IBM DeveloperWorks site), I'd been lacking Search and Comments. I use the [Jekyll Minima theme](https://github.com/jekyll/minima), which has built-in support for Disqus comments, but when I finally decided to try that, I did a quick search on the Privacy implications (having noted that my Privacy add-ons block Disqus by default), and decided [I didn't want to use Disqus after all](https://fatfrogmedia.com/delete-disqus-comments-wordpress/).
