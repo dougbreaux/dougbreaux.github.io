@@ -27,4 +27,14 @@ You can see I chose utterances.
 
 ## utterances with Jekyll Minima
 
-While Minima has a built-in hook for customizing your blog's header without duplicating all the rest of, it doesn't have one for customizing the post page. I really didn't want to completely overwrite the post page - which would make me have to keep up with changes to it myself - but thought that might be the only option. But it turns out that it was easy enough to pretend I was using Disqus comments and instead override the [disqus_comments.html](https://github.com/dougbreaux/dougbreaux.github.io/blob/master/_includes/disqus_comments.html) page to contain the utterances script.
+While Minima has a built-in hook for customizing your blog's header without duplicating all the rest of, it doesn't have one for customizing the post page. I really didn't want to completely overwrite the post page - which would make me have to keep up with changes to it myself - but thought that might be the only option. 
+
+But it turns out that it was easy enough to pretend I was using Disqus comments 
+
+```yaml
+# fake Disqus so can do utterances comments without changing base Minima post.html
+disqus:
+  shortname: fake_disqus_utterances
+```
+
+and instead override the [disqus_comments.html](https://github.com/dougbreaux/dougbreaux.github.io/blob/master/_includes/disqus_comments.html) page to contain the utterances script.
