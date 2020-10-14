@@ -23,7 +23,7 @@ The 3 that looked most interesting to me were
 * [Staticman](https://staticman.net/)
 * [Gitment](https://github.com/imsun/gitment)
 
-You can see I chose utterances. utterances, and some of the other approaches, does require the commenter to have a GitHub account. That seems a reasonable constraint to me, and should be a SPAM deterrent as well.
+You can see I chose utterances. utterances, like some of the other approaches, does require the commenter to have a GitHub account. That seems a reasonable constraint to me, and should be a SPAM deterrent as well.
 
 ## utterances with Jekyll Minima
 
