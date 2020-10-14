@@ -23,13 +23,13 @@ The 3 that looked most interesting to me were
 * [Staticman](https://staticman.net/)
 * [Gitment](https://github.com/imsun/gitment)
 
-You can see I chose utterances.
+You can see I chose utterances. utterances, and some of the other approaches, does require the commenter to have a GitHub account. That seems a reasonable constraint to me, and should be a SPAM deterrent as well.
 
 ## utterances with Jekyll Minima
 
 While Minima has a built-in hook for customizing your blog's header without duplicating all the rest of, it doesn't have one for customizing the post page. I really didn't want to completely overwrite the post page - which would make me have to keep up with changes to it myself - but thought that might be the only option. 
 
-But it turns out that it was easy enough to pretend I was using Disqus comments 
+But it turns out that it was easy enough to pretend I was using Disqus comments: 
 
 ```yaml
 # fake Disqus so can do utterances comments without changing base Minima post.html
