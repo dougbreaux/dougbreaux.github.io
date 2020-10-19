@@ -35,7 +35,7 @@ The API URL is:
 The curl command to pull the latest Java jar, in my case, is:
 
 ```shell
-$ curl -H 'API-Key:ibm-api-key' -H 'Authorization:my-personal-authorization-header' https://app.contrastsecurity.com/Contrast/api/ng/ibm-organization-id/agents/default/JAVA?jvm=1.8 -o contrast.jar
+$ curl -H 'API-Key:organization-api-key' -H 'Authorization:my-personal-authorization-header' https://app.contrastsecurity.com/Contrast/api/ng/organization-id/agents/default/JAVA?jvm=1.8 -o contrast.jar
 ```
 Or if I turn those into environment variables, so that I can later put them safely in my Dockerfile or even share the command with someone:
 ```shell
