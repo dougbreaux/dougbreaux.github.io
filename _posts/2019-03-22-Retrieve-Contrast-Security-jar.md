@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Retrieving the Contrast Security agent jar from a script
 tags:
   - agent
