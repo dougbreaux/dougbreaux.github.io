@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Adding Contrast Security to Docker Liberty image
 tags:
   - websphere
