@@ -32,4 +32,4 @@ Or, if you're just using the default keyfile location of $HOME/.ssh/id_rsa, you 
 ```shell
 ssh-add
 ```
-Or, if you want to have Git Bash automatically do this for you when it starts up, see (https://help.github.com/en/articles/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)
+Or, if you want to have Git Bash automatically do this for you when it starts up, see [](https://help.github.com/en/articles/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)
