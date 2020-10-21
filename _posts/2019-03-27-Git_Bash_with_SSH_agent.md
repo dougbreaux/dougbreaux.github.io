@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Git Bash with SSH agent
 tags:
   - shell
