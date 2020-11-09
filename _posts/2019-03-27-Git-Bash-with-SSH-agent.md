@@ -19,7 +19,7 @@ An SSH "agent" is a program that can run in the background and load up your priv
 
 PuTTY includes the extra program Pageant for this purpose.
 
-Command-line SSH, which is part of Linux and MacOS, and included in Git for Windows, has ssh-agent. The following commands can be executed in your Bash shell to start the agent (and leave it running), and to add your SSH key(s) to the agent. Where you'll type the passphrase just once, then all subsequent (say git) commands won't prompt you again for it:
+Command-line SSH, which is part of Linux and MacOS, and included in Git for Windows, has `ssh-agent`. The following commands can be executed in your Bash shell to start the agent (and leave it running), and to add your SSH key(s) to the agent. Where you'll type the passphrase just once, then all subsequent (say git) commands won't prompt you again for it:
 
 ```shell
 eval `ssh-agent.exe`
@@ -28,7 +28,7 @@ ssh-add /my/ssh/keyfile.rsa
 
 (Notice the back-ticks.)
 
-Or, if you're just using the default keyfile location of $HOME/.ssh/id_rsa, you don't have to specify the file name at all in that second step:
+Or, if you're just using the default keyfile location of `$HOME/.ssh/id_rsa`, you don't have to specify the file name at all in that second step:
 ```shell
 ssh-add
 ```
