@@ -18,7 +18,7 @@ One of the first unexpected things I learned when trying to run an existing Dock
 
 This causes problems either for images that expect to run as root, or potentially for ones that expect to run as a specific non-root user, [like WebSphere Liberty](https://hub.docker.com/_/websphere-liberty). 
 
-And actually, Liberty itself didn't have a problem, but some other custom things I'd done to our Liberty - [installing Contrast Security into the image](/2019/03/24/Adding-Contrast-Security-to-Docker-Liberty.html) - did have [a problem that required](https://support.contrastsecurity.com/hc/en-us/articles/360035744111-Java-io-IOException-seen-during-startup-Can-t-promise-read-write-on-cache-dir-) the proposed ~workaround~ technique.
+And actually, Liberty itself didn't have a problem, but some other custom things I'd done to our Liberty - [installing Contrast Security into the image](/2019/03/24/Adding-Contrast-Security-to-Docker-Liberty.html) - did have [a problem](https://support.contrastsecurity.com/hc/en-us/articles/360035744111-Java-io-IOException-seen-during-startup-Can-t-promise-read-write-on-cache-dir-) that required the proposed ~~workaround~~ technique.
 
 ```Dockerfile
 RUN mkdir /home/default/contrast && \
