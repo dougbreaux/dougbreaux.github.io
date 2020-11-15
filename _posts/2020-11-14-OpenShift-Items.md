@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Some OpenShift Container Platform Learnings
 tags:
   - redhat
