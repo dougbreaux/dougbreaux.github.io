@@ -38,7 +38,7 @@ oc adm policy add-scc-to-user anyuid system:serviceaccount:shaarli:default
 
 ## Debugging tips
 
-In the process of debugging, I found [Executing commands inside a container](https://docs.openshift.com/container-platform/4.5/applications/deployments/managing-deployment-processes.html#deployments-exe-cmd-in-container_deployment-operations) as the OCP way to override a container entrypoint. Although for this particular problem, the suggested technique of changing the entry point to a shell seems like it might not make sense in an OCP enviroment. I know it didn't actually work here - the container failed to start - but I didn't pursue further.
+In the process of debugging, I found [Executing commands inside a container](https://docs.openshift.com/container-platform/4.5/applications/deployments/managing-deployment-processes.html#deployments-exe-cmd-in-container_deployment-operations) as the OCP way to override a container entrypoint. Although for this particular problem, the suggested technique of changing the entry point to a shell seems like it might not make sense in an OCP environment. I know it didn't actually work here - the container failed to start - but I didn't pursue further.
 
 I also found [How do I debug an application that fails to start up?](https://cookbook.openshift.org/logging-monitoring-and-debugging/how-do-i-debug-an-application-that-fails-to-start-up.html):
 
