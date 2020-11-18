@@ -38,9 +38,9 @@ oc adm policy add-scc-to-user anyuid system:serviceaccount:shaarli:default
 
 ## Debugging tips
 
-In the process of debugging, found [Executing commands inside a container](https://docs.openshift.com/container-platform/4.5/applications/deployments/managing-deployment-processes.html#deployments-exe-cmd-in-container_deployment-operations) as the OCP way to override a container entrypoint. Although for this particular problem, the suggested technique of changing the entry point to a shell seems like it might not actually make sense in an OCP enviroment. I know it didn't actually work here - the container failed to start - but I didn't pursue further.
+In the process of debugging, I found [Executing commands inside a container](https://docs.openshift.com/container-platform/4.5/applications/deployments/managing-deployment-processes.html#deployments-exe-cmd-in-container_deployment-operations) as the OCP way to override a container entrypoint. Although for this particular problem, the suggested technique of changing the entry point to a shell seems like it might not make sense in an OCP enviroment. I know it didn't actually work here - the container failed to start - but I didn't pursue further.
 
-Also found [How do I debug an application that fails to start up?](https://cookbook.openshift.org/logging-monitoring-and-debugging/how-do-i-debug-an-application-that-fails-to-start-up.html):
+I also found [How do I debug an application that fails to start up?](https://cookbook.openshift.org/logging-monitoring-and-debugging/how-do-i-debug-an-application-that-fails-to-start-up.html):
 
 ```bash
 oc debug deployment/shaarli
@@ -52,4 +52,4 @@ Then in my case, I tried:
 ```bash
 oc debug --as-root=false deployment/shaarli
 ```
-But regrettably that never gave me a shell, it just hung there until the `oc` timed out and disconnected. So I don't know whether that will prove to be a useful debugging technique for this particular problem in general.
+But regrettably that never gave me a shell, it just hung there until the `oc` command timed out and disconnected. So I don't know whether that will prove to be a useful debugging technique for this particular problem in general.
