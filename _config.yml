@@ -15,7 +15,7 @@ show_excerpts: true
 remote_theme: jekyll/minima
 
 minima:
-#  skin: solarized
+  skin: solarized
   social_links:
     github: dougbreaux
     stackoverflow: "796761"
@@ -24,11 +24,11 @@ minima:
 paginate: 10
 #paginate_path: /_posts/page:num/
 
-markdown: kramdown
-highlighter: rouge
+#markdown: kramdown
+#highlighter: rouge
 
 kramdown:
-    syntax_highlighter: rouge
+#    syntax_highlighter: rouge
     syntax_highlighter_opts:
         block:
             line_numbers: false
