@@ -15,7 +15,7 @@ show_excerpts: true
 remote_theme: jekyll/minima
 
 minima:
-  skin: solarized
+#  skin: solarized
   social_links:
     github: dougbreaux
     stackoverflow: "796761"
