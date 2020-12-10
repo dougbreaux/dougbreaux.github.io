@@ -10,7 +10,7 @@ tags:
 ---
 ![RH-openshift-image.jpg]({{site.baseurl}}/assets/RH-openshift-image.jpg)
 
-## Arbitrary User IDs TESTING
+## Arbitrary User IDs
 
 One of the first unexpected things I learned when trying to run an existing Docker image on OCP, is that, by default, [OCP runs containers as an unpredictable, non-root user](https://docs.openshift.com/container-platform/4.5/openshift_images/create-images.html#use-uid_create-images). 
 
