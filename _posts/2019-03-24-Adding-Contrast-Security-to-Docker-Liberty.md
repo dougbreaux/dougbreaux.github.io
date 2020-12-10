@@ -14,7 +14,7 @@ Follow-up to, and making use of [Retrieving the Contrast Security agent jar from
 
 These are the Dockerfile commands that I've successfully used to add Contrast to a Liberty image (although still some errors in the Contrast log to figure out, that don't seem to be hindering either the app or the Contrast scanning):
 
-```Dockerfile
+```Docker
 FROM websphere-liberty:19.0.0.2-kernel
 
 ...
