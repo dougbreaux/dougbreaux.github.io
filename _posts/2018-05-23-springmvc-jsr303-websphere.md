@@ -1,6 +1,13 @@
 ---
-title: Spring MVC, JSR 303 Validation, and WebSphere
-tags: [ websphere, jsr-303, spring, jsr303, springmvc, validation ]
+title: 'Spring MVC, JSR 303 Validation, and WebSphere'
+tags:
+  - websphere
+  - jsr-303
+  - spring
+  - jsr303
+  - springmvc
+  - validation
+published: true
 ---
 (On Traditional WebSphere (tWAS) 8.5.5, Java 8, or on WebSphere Liberty 18, currently with Feature webProfile-6.0, in order to match the tWAS spec levels as closely as possible.)
 
@@ -13,7 +20,7 @@ At that time, the need wasn't that great, so I just manually validated the singl
 * TOC
 {:toc}
 
-But then I hit a case where I wanted to to more sophisticated validation (of REST-style web service controllers), and this would be an easier pattern than the alternatives I was aware of. So I decided to jump in again. After a bit more wrestling, I was starting to think nobody else had done this before, and I was going to have to give up, when I came across a clue that eventually led to success. So I wanted to document that, both for my own future reference, and for anyone else trying to do the same thing.
+But then I hit a case where I wanted to do more sophisticated validation (of REST-style web service controllers), and this would be an easier pattern than the alternatives I was aware of. So I decided to jump in again. After a bit more wrestling, I was starting to think nobody else had done this before, and I was going to have to give up, when I came across a clue that eventually led to success. So I wanted to document that, both for my own future reference, and for anyone else trying to do the same thing.
 
 ## Context
 
