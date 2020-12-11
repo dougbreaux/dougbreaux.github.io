@@ -20,11 +20,11 @@ This causes problems either for images that expect to run as root, or potentiall
 
 And actually, Liberty itself didn't have a problem, but some other custom things I'd done to our Liberty - [installing Contrast Security into the image](/2019/03/24/Adding-Contrast-Security-to-Docker-Liberty.html) - did have [a problem](https://support.contrastsecurity.com/hc/en-us/articles/360035744111-Java-io-IOException-seen-during-startup-Can-t-promise-read-write-on-cache-dir-) that required the proposed ~~workaround~~ technique.
 
-```Docker
+{% highlight docker %}
 RUN mkdir /home/default/contrast && \
     chown -R 1001:0 /home/default/contrast && \
     chmod -R g=u /home/default/contrast
-```
+{% end highlight %}
 
 ## Run as root
 
