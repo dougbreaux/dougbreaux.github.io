@@ -39,7 +39,7 @@ USER 1001
 RUN ls -al /home/default/contrast
 ```
 Note the CONTRAST_API_KEY, CONTRAST_ORG, and CONTRAST_AUTH arguments that have to be passed to the docker build command:
-```shell
+```Console
 $ docker build --build-arg CONTRAST_API_KEY=$CONTRAST_API_KEY --build-arg CONTRAST_ORG=$CONTRAST_ORG --build-arg CONTRAST_AUTH=$CONTRAST_AUTH -t my-image-name .
 ```
 Where I've also made those environment variables in my local shell so that they're not actually recorded in that command.
