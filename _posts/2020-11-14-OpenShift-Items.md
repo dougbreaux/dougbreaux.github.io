@@ -24,7 +24,7 @@ And actually, Liberty itself didn't have a problem, but some other custom things
 RUN mkdir /home/default/contrast && \
     chown -R 1001:0 /home/default/contrast && \
     chmod -R g=u /home/default/contrast
-{% end highlight %}
+{% endhighlight %}
 
 ## Run as root
 
