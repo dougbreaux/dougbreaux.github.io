@@ -14,7 +14,7 @@ Follow-up to, and making use of [Retrieving the Contrast Security agent jar from
 
 These are the Dockerfile commands that I've successfully used to add Contrast to a Liberty image (although still some errors in the Contrast log to figure out, that don't seem to be hindering either the app or the Contrast scanning):
 
-```Docker
+{% highlight Docker %}
 FROM websphere-liberty:19.0.0.2-kernel
 
 ...
@@ -37,7 +37,7 @@ USER 1001
 
 # This was just my sanity to prove I got the jar file, not an auth error or something else
 RUN ls -al /home/default/contrast
-```
+{% endhighlight %}
 Note the CONTRAST_API_KEY, CONTRAST_ORG, and CONTRAST_AUTH arguments that have to be passed to the docker build command:
 ```Console
 $ docker build --build-arg CONTRAST_API_KEY=$CONTRAST_API_KEY --build-arg CONTRAST_ORG=$CONTRAST_ORG --build-arg CONTRAST_AUTH=$CONTRAST_AUTH -t my-image-name .
