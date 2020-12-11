@@ -33,7 +33,7 @@ The next image I tried that hits this same problem right "out of the box" is [th
 So in the meantime, I explored how to bypass OCP's default and explicitly allow this container to run as root. [This reference in the older OCP 3.2 documentation](https://docs.openshift.com/enterprise/3.2/admin_guide/manage_scc.html#enable-dockerhub-images-that-require-root) gives the relevant commands for that version. And while I couldn't find the equivalent in the [documentation for the 4.5 version](https://docs.openshift.com/container-platform/4.5/welcome/index.html) that we're running, a bit of extrapolation and the image did start successfully:
 
 ```shell
-oc adm policy add-scc-to-user anyuid system:serviceaccount:shaarli:default
+$ oc adm policy add-scc-to-user anyuid system:serviceaccount:shaarli:default
 ```
 
 ## Debugging tips
@@ -43,13 +43,13 @@ In the process of debugging, I found [Executing commands inside a container](htt
 I also found [How do I debug an application that fails to start up?](https://cookbook.openshift.org/logging-monitoring-and-debugging/how-do-i-debug-an-application-that-fails-to-start-up.html):
 
 ```shell
-oc debug deployment/shaarli
+$ oc debug deployment/shaarli
 Starting pod/shaarli-debug, command was: /bin/sh
 ```
 But regrettably, that puts you in the pod as `root` (which seems an odd default, given that the pods don't run as `root` by default).
 
 Then in my case, I tried:
 ```shell
-oc debug --as-root=false deployment/shaarli
+$ oc debug --as-root=false deployment/shaarli
 ```
 But regrettably that never gave me a shell, it just hung there until the `oc` command timed out and disconnected. So I don't know whether that will prove to be a useful debugging technique for this particular problem in general.
