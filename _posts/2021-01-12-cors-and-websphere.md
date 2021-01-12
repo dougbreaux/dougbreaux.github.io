@@ -55,8 +55,23 @@ Looking at all the request headers being sent by the failing browser case, there
 - `Access-Control-Request-Headers`
 - `Access-Control-Request-Method`
 
-Once I added those, Postman started failing too. So now I had the simplest way to duplicate the problem. Ok, at least the `Origin` one should make sense. Our above (only partially-understood, clearly :wink:) IHS rule is looking for that header, so that would have be an essential one for CORS type requests.
+Once I added those, Postman started failing too. So now I had the simplest way to duplicate the problem. 
 
+Ok, at least the `Origin` one should make sense. Our above (only partially-understood, clearly :wink:) IHS rule is looking for that header, so that would have be an essential one for CORS type requests.
+
+I'll admit it was largely trial-and-error from here, but [some references](https://stackoverflow.com/a/32501365/796761), read carefully, might have clued me in that I'd need to also add the following IHS rule:
+```apacheconf
+        Header set Access-Control-Allow-Headers "content-type"
+```
+
+Although, in my defense, I read _somewhere_ (that I can't find now), that certain request headers would be assumed to be allowed by default. I can't swear whether I read that `content-type` was one such header, or whether I just assumed it _had_ to be a default one.
+
+But what really clinched that one was that, in this case, the Chromium-Edge console gave the particularly helpful error:
+```
+Access to XMLHttpRequest at 'https://my-main-domain.com/address-validation/api/address/validate' from origin 'https://www.test-cors.org' has been blocked by CORS policy: Request header field content-type is not allowed by Access-Control-Allow-Headers in preflight response.
+```
+
+## 
 
 ## References
 
@@ -68,3 +83,4 @@ Once I added those, Postman started failing too. So now I had the simplest way t
 - [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
 - [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
 - https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/
+- https://stackoverflow.com/a/32501365/796761
