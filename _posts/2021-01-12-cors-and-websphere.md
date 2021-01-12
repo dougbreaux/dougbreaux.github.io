@@ -71,7 +71,17 @@ But what really clinched that one was that, in this case, the Chromium-Edge cons
 Access to XMLHttpRequest at 'https://my-main-domain.com/address-validation/api/address/validate' from origin 'https://www.test-cors.org' has been blocked by CORS policy: Request header field content-type is not allowed by Access-Control-Allow-Headers in preflight response.
 ```
 
-## 
+## WebSphere and (Java, Spring MVC) Service
+
+But even with all that, we were still getting a 403 response frome the Preflight `OPTIONS`. Logged in the IHS access log, so we knew it was reaching that, but errors in our application (service) log or WebSphere log.
+
+So I reached out to an IBM [IHS and WAS colleague](https://github.com/covener), who first had me enable Apache Module logging with `%{RH}e` (looking for official reference), which reported `mod_was_ap22_http.c/-2/handler`, which my colleague say that "-2" means the reponse was forwarded by WebSphere. Thus, this remaining 403 is coming from WebSphere and/or our service, not from IHS.
+
+Ahah, so `OPTIONS` is being passed down to WebSphere, which isn't handling it. It honestly seemed inconceivable to me that such a low-level detail (only if JSON, preflight `OPTIONS` will be sent) would have to be explicitly handled by service logic, but apparently it is. 
+
+### Spring CORS Support
+
+Our service developer had asked if we needed to be using [Spring's CORS support](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) (this is a Spring MVC web service), which I had originally thought no, but now looked likely. 
 
 ## References
 
