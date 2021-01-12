@@ -85,21 +85,27 @@ That is, `OPTIONS` is being passed down to WebSphere, which isn't handling it. I
 
 Eric then suggested enabling WebSphere [Web Container "Must gather" tracing](https://www.ibm.com/support/pages/mustgather-web-container-and-servlet-engine-problems-websphere-application-server) to get further details of where in WebSphere the response was being generated.
 
-Then another IBM colleague, [Phu Dinh](https://github.com/pmd1nh), looked at the resulting trace and pointed out that it was the Spring MVC Dispatcher Servlet that was returning the 403.
+Then another IBM colleague, [Phu Dinh](https://github.com/pmd1nh), looked at the resulting trace and pointed out that it was the Spring MVC Dispatcher Servlet that was returning the 403. (The service being called is implemented by a Spring MVC Controller.)
 
 ### Apache rules to handle `OPTIONS`
 
-[One reference](https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/) suggested manually configuring Apache (IHS) to respond to `OPTIONS` with a 200, but that seems way too fiddly to me.
+[One reference](https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/) suggested manually configuring Apache (IHS) to respond to `OPTIONS` with a 200, which wouldn't pass it down to the WebSphere Spring service at all, but that seemed (and still seems) way too fiddly to me.
 
 ### Spring CORS Support
 
-Next, our service developer had asked if we needed to be using [Spring's CORS support](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) (this is a Spring MVC web service), which I had originally thought no, but now looked like it might be the least objectionable option for us. Although I definitely didn't want to have to manually manage there the list of allowed domains. 
+Next, our service developer had suggested we might need or want to use [Spring's CORS support](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework). To which I had originally thought no, but now looked like it might be the better option for us. Although I definitely didn't want to have to manually manage there the list of allowed domains. 
 
-But before we pursued this approach further, our other developer found another reference that provided the solution we ended up using.
+But before we pursued this approach further, another developer on our team found a reference that provided the solution we ended up using.
 
 ### Simple IHS rule to "absorb" `OPTIONS`
 
 As described in [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518), adding this 
+```apacheconf
+        # Avoid passing OPTIONS back to WebSphere in case WAS would redirect or return an error
+        SetEnvIfNoCase REQUEST_METHOD OPTIONS skipwas=1
+```
+
+Now all the current browsers are able to successfully make this CORS AJAX request, with the Preflight `OPTIONS` and the subsequent `application/json` `POST` both succeeding.
 
 ## References
 
