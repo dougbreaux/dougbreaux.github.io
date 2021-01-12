@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: CORS and WebSphere
 tags:
   - websphere
