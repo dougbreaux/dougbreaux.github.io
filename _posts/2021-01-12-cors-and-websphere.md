@@ -43,7 +43,20 @@ This behavior was occuring for us in all the modern browsers we'd tried, so it w
 
 So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing option you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
 
-We did initially see 405s and had to adjust for that, but then we started seeing 40
+We did initially see 405s and had to adjust for that, but then we started seeing 403s on the OPTIONS request instead:
+![cors-options-error.png]({{site.baseurl}}/assets/cors-options-error.png)
+
+Now what? Attempting a plain `OPTIONS` request through a test tool (Postman) succeeded, so what was different?
+
+## CORS Request Headers
+
+Looking at all the request headers being sent by the failing browser case, there were a few related to CORS that I hadn't set in my Postman test case. Notably
+- `Origin`
+- `Access-Control-Request-Headers`
+- `Access-Control-Request-Method`
+
+Once I added those, Postman started failing too. So now I had the simplest way to duplicate the problem. Ok, at least the `Origin` one should make sense. Our above (only partially-understood, clearly :wink:) IHS rule is looking for that header, so that would have be an essential one for CORS type requests.
+
 
 ## References
 
@@ -51,7 +64,7 @@ We did initially see 405s and had to adjust for that, but then we started seeing
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 - https://stackoverflow.com/a/1850482/796761
 - https://stackoverflow.com/a/29954326/796761
-- https://www.test-cors.org/ Very useful site for testing CORS on your server
+- https://www.test-cors.org/ Very useful site for testing CORS on your server. Even provides a shareable link to your exact test case.
 - [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
 - [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
 - https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/
