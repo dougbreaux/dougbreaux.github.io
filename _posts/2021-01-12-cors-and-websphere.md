@@ -52,7 +52,7 @@ Now what? Attempting a plain `OPTIONS` request through a test tool (Postman) suc
 
 Looking at all the request headers being sent by the failing browser case, there were a few related to CORS that I hadn't set in my Postman test case. Notably
 - `Origin`
-- `Access-Control-Request-Headers`
+- `[Access-Control-Request-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)`
 - `Access-Control-Request-Method`
 
 Once I added those, Postman started failing too. So now I had the simplest way to duplicate the problem. 
@@ -64,7 +64,7 @@ I'll admit it was largely trial-and-error from here, but [some references](https
         Header set Access-Control-Allow-Headers "content-type"
 ```
 
-Although, in my defense, I read _somewhere_ (that I can't find now), that certain request headers would be assumed to be allowed by default. I can't swear whether I read that `content-type` was one such header, or whether I just assumed it _had_ to be a default one.
+Although, in my defense, I had read that [certain request headers would be assumed to be allowed by default](https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header), and `content-type` should have been one of those.
 
 But what really clinched that one was that, in this case, the Chromium-Edge console gave the particularly helpful error:
 ```
@@ -75,13 +75,31 @@ Access to XMLHttpRequest at 'https://my-main-domain.com/address-validation/api/a
 
 But even with all that, we were still getting a 403 response frome the Preflight `OPTIONS`. Logged in the IHS access log, so we knew it was reaching that, but errors in our application (service) log or WebSphere log.
 
-So I reached out to an IBM [IHS and WAS colleague](https://github.com/covener), who first had me enable Apache Module logging with `%{RH}e` (looking for official reference), which reported `mod_was_ap22_http.c/-2/handler`, which my colleague say that "-2" means the reponse was forwarded by WebSphere. Thus, this remaining 403 is coming from WebSphere and/or our service, not from IHS.
+### IHS details
 
-Ahah, so `OPTIONS` is being passed down to WebSphere, which isn't handling it. It honestly seemed inconceivable to me that such a low-level detail (only if JSON, preflight `OPTIONS` will be sent) would have to be explicitly handled by service logic, but apparently it is. 
+So I reached out to an IBM [IHS and WAS expert colleague Eric Covener](https://github.com/covener), who had me enable Apache Module "Request Handler" logging with `%{RH}e` (looking for official reference), which reported `mod_was_ap22_http.c/-2/handler`, which my colleague says that "-2" means the reponse was forwarded by WebSphere. Thus, this remaining 403 is coming from WebSphere and/or our service, not from IHS.
+
+That is, `OPTIONS` is being passed down to WebSphere, which isn't handling it. It honestly seemed inconceivable to me that such a low-level detail (only if JSON, Preflight `OPTIONS` will be sent) would have to be explicitly handled by service logic, but apparently it is. 
+
+### WebSphere details
+
+Eric then suggested enabling WebSphere [Web Container "Must gather" tracing](https://www.ibm.com/support/pages/mustgather-web-container-and-servlet-engine-problems-websphere-application-server) to get further details of where in WebSphere the response was being generated.
+
+Then another IBM colleague, [Phu Dinh](https://github.com/pmd1nh), looked at the resulting trace and pointed out that it was the Spring MVC Dispatcher Servlet that was returning the 403.
+
+### Apache rules to handle `OPTIONS`
+
+[One reference](https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/) suggested manually configuring Apache (IHS) to respond to `OPTIONS` with a 200, but that seems way too fiddly to me.
 
 ### Spring CORS Support
 
-Our service developer had asked if we needed to be using [Spring's CORS support](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) (this is a Spring MVC web service), which I had originally thought no, but now looked likely. 
+Next, our service developer had asked if we needed to be using [Spring's CORS support](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) (this is a Spring MVC web service), which I had originally thought no, but now looked like it might be the least objectionable option for us. Although I definitely didn't want to have to manually manage there the list of allowed domains. 
+
+But before we pursued this approach further, our other developer found another reference that provided the solution we ended up using.
+
+### Simple IHS rule to "absorb" `OPTIONS`
+
+As described in [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518), adding this 
 
 ## References
 
@@ -94,3 +112,6 @@ Our service developer had asked if we needed to be using [Spring's CORS support]
 - [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
 - https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/
 - https://stackoverflow.com/a/32501365/796761
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
+- https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header
+- https://www.ibm.com/support/pages/mustgather-web-container-and-servlet-engine-problems-websphere-application-server
