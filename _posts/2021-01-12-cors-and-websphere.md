@@ -33,10 +33,21 @@ In our WebSphere ("Traditional" version 8.5.5) with IBM HTTP Server (IHS, based 
 
 The above was sufficient for our prior use cases, all of which were either HTTP `GET`s or `POST`s of `content-type` `application/x-www-form-urlencoded`.
 
-We discovered, though, that for `content-type` `application/json`, `POST` requests were failing due to CORS restrictions. Apparently, that `content-type` triggers a "[CORS Preflight](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#Preflight_example)" request, which is an HTTP `OPTIONS` request. (I've so far found multiple [references](https://stackoverflow.com/a/43881141/796761) confirming this behavior, but not yet any official statement on why.)
+We discovered, though, that for `content-type` `application/json`, `POST` requests were failing due to CORS restrictions. Apparently, that `content-type` triggers a "[CORS Preflight](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#Preflight_example)" request, which is an HTTP `OPTIONS` request. 
+
+[Multiple](https://stackoverflow.com/a/29954326/796761) [references](https://stackoverflow.com/a/43881141/796761) pointed out this behavior, with a pointer to some [official Mozilla Developer Network (MDN) description](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests).
 
 This behavior was occuring for us in all the modern browsers we'd tried, so it wasn't just a quirk.
 
 ## HTTP `OPTIONS`
 
-So the first step was to ensure that the HTTP `OPTIONS` verb is being allowed by 
+So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing option you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
+
+## References
+
+- https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+- https://stackoverflow.com/a/1850482/796761
+- https://stackoverflow.com/a/29954326/796761
+- https://www.test-cors.org/ Very useful site for testing CORS on your server
+- [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
