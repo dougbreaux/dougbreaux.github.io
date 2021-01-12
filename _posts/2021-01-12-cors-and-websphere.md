@@ -110,15 +110,15 @@ Now all the current browsers are able to successfully make this CORS AJAX reques
 
 ## References
 
-- https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-- https://stackoverflow.com/a/1850482/796761
-- https://stackoverflow.com/a/29954326/796761
+- [https://en.wikipedia.org/wiki/Cross-origin_resource_sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
+- [https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- [https://stackoverflow.com/a/1850482/796761](https://stackoverflow.com/a/1850482/796761)
+- [https://stackoverflow.com/a/29954326/796761](https://stackoverflow.com/a/29954326/796761)
 - https://www.test-cors.org/ Very useful site for testing CORS on your server. Even provides a shareable link to your exact test case.
 - [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
 - [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
-- https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/
-- https://stackoverflow.com/a/32501365/796761
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
-- https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header
-- https://www.ibm.com/support/pages/mustgather-web-container-and-servlet-engine-problems-websphere-application-server
+- [Setting CORS (cross-origin resource sharing) on Apache with correct response headers allowing everything through](https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/)
+- [https://stackoverflow.com/a/32501365/796761](https://stackoverflow.com/a/32501365/796761)
+- [Access-Control-Allow-Headers at MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)
+- [CORS-safelisted request header at MDN](https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header)
+- [MustGather: Web container and Servlet engine problems in WebSphere Application Server](https://www.ibm.com/support/pages/mustgather-web-container-and-servlet-engine-problems-websphere-application-server)
