@@ -37,11 +37,13 @@ We discovered, though, that for `content-type` `application/json`, `POST` reques
 
 [Multiple](https://stackoverflow.com/a/29954326/796761) [references](https://stackoverflow.com/a/43881141/796761) pointed out this behavior, with a pointer to some [official Mozilla Developer Network (MDN) description](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests).
 
-This behavior was occuring for us in all the modern browsers we'd tried, so it wasn't just a quirk.
+This behavior was occuring for us in all the modern browsers we'd tried, so it wasn't just a quirk. Watching the network requests in the Firefox developer tools, we'd see the `OPTIONS` request sent and fail. (Chrome and Chromium Edge did not explicitly show the `OPTIONS` request, BTW, only the failed subsequent/overall request. And I want to say it was appearing as a `GET` instead of `POST` too, but I can't remember for certain.)
 
 ## HTTP `OPTIONS`
 
 So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing option you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
+
+We did initially see 405s and had to adjust for that, but then we started seeing 40
 
 ## References
 
@@ -51,3 +53,5 @@ So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by 
 - https://stackoverflow.com/a/29954326/796761
 - https://www.test-cors.org/ Very useful site for testing CORS on your server
 - [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
+- [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
+- https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/
