@@ -114,7 +114,7 @@ Now all the current browsers are able to successfully make this CORS AJAX reques
 - [https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - [https://stackoverflow.com/a/1850482/796761](https://stackoverflow.com/a/1850482/796761)
 - [https://stackoverflow.com/a/29954326/796761](https://stackoverflow.com/a/29954326/796761)
-- https://www.test-cors.org/ Very useful site for testing CORS on your server. Even provides a shareable link to your exact test case.
+- [https://www.test-cors.org/](https://www.test-cors.org/) Very useful site for testing CORS on your server. Even provides a shareable link to your exact test case.
 - [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518)
 - [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) and [CORS support in Spring Framework](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework) for Spring MVC
 - [Setting CORS (cross-origin resource sharing) on Apache with correct response headers allowing everything through](https://benjaminhorn.io/code/setting-cors-cross-origin-resource-sharing-on-apache-with-correct-response-headers-allowing-everything-through/)
