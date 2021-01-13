@@ -23,11 +23,11 @@ I won't try to [explain CORS](https://en.wikipedia.org/wiki/Cross-origin_resourc
 In our WebSphere ("Traditional" version 8.5.5) with IBM HTTP Server (IHS, based on Apache 2.2), we'd set up a few necessary headers in our IHS configuration using the Apache approach described in a number of places, like [here](https://stackoverflow.com/a/1850482/796761).
 
 {% highlight apacheconf %}
-    <IfModule mod_headers.c>
-        SetEnvIf Origin "http(s)?://.*(my-other-domain1.com|my-other-domain2.com)(:[0-9]+)?$" AccessControlAllowOrigin=$0
-        Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-        Header add Vary Origin
-    </IfModule>
+<IfModule mod_headers.c>
+    SetEnvIf Origin "http(s)?://.*(my-other-domain1.com|my-other-domain2.com)(:[0-9]+)?$" AccessControlAllowOrigin=$0
+    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header add Vary Origin
+</IfModule>
 {% endhighlight %}
 
 ## JSON Request Data
@@ -62,7 +62,7 @@ Ok, at least the `Origin` one should make sense. Our above (only partially-under
 
 I'll admit it was largely trial-and-error from here, but [some references](https://stackoverflow.com/a/32501365/796761), read carefully, might have clued me in that I'd need to also add the following IHS rule:
 {% highlight apacheconf %}
-        Header set Access-Control-Allow-Headers "content-type"
+Header set Access-Control-Allow-Headers "content-type"
 {% endhighlight %}
 
 Although, in my defense, I had read that [certain request headers would be assumed to be allowed by default](https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header), and `content-type` should have been one of those.
@@ -102,8 +102,8 @@ But before we pursued this approach further, another developer on our team found
 
 As described in [Configuring CORS for WebSphere Application Server](https://www.ibm.com/support/pages/node/6348518), adding this 
 {% highlight apacheconf %}
-        # Avoid passing OPTIONS back to WebSphere in case WAS would redirect or return an error
-        SetEnvIfNoCase REQUEST_METHOD OPTIONS skipwas=1
+# Avoid passing OPTIONS back to WebSphere in case WAS would redirect or return an error
+SetEnvIfNoCase REQUEST_METHOD OPTIONS skipwas=1
 {% endhighlight %}
 
 Now all the current browsers are able to successfully make this CORS AJAX request, with the Preflight `OPTIONS` and the subsequent `application/json` `POST` both succeeding.
