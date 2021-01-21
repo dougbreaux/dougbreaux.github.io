@@ -1,6 +1,11 @@
 ---
 title: Editing files in Liberty Docker containers (e.g. Trace logging)
-tags: [ docker, websphere, liberty, tracing ]
+tags:
+  - docker
+  - websphere
+  - liberty
+  - tracing
+published: true
 ---
 I discovered that the default [Liberty Docker images](https://hub.docker.com/_/websphere-liberty) - currently based on Ubuntu - don't include vi or edit for editing files. Nor sudo to be able to install those programs.
 
@@ -44,4 +49,4 @@ apt-get install vim
 vi /config/server.xml
 ```
 
-(Thanks to fellow IBMer Kevin Grigorenko @kgibm )
+(Thanks to fellow IBMer Kevin Grigorenko [@kgibm](https://github.com/kgibm) )
