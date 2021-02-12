@@ -42,9 +42,9 @@ This behavior was occuring for us in all the modern browsers we'd tried, so it w
 
 ## HTTP `OPTIONS`
 
-So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing option you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
+So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing `OPTIONS` you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
 
-We did initially see 405s and had to adjust for that, but then we started seeing 403s on the OPTIONS request instead:
+We did initially see 405s and had to adjust for that, but then we started seeing 403s on the `OPTIONS` request instead:
 ![cors-options-error.png]({{site.baseurl}}/assets/cors-options-error.png)
 
 Now what? Attempting a plain `OPTIONS` request through a test tool (Postman) succeeded, so what was different?
@@ -53,7 +53,7 @@ Now what? Attempting a plain `OPTIONS` request through a test tool (Postman) suc
 
 Looking at all the request headers being sent by the failing browser case, there were a few related to CORS that I hadn't set in my Postman test case. Notably
 - `Origin`
-- `[Access-Control-Request-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)`
+- [`Access-Control-Request-Headers`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)
 - `Access-Control-Request-Method`
 
 Once I added those, Postman started failing too. So now I had the simplest way to duplicate the problem. 
