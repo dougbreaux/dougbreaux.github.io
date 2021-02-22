@@ -44,10 +44,16 @@ This behavior was occuring for us in all the modern browsers we'd tried, so it w
 
 So the first step is to ensure that the HTTP `OPTIONS` verb is being allowed by all the web components down the chain (CDN, haproxy, IHS, WebSphere, application, etc.) If any of those are not allowing `OPTIONS` you should see an [HTTP 405 "Method not allowed" response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6).
 
-We did initially see 405s and had to adjust for that, but then we started seeing 403s on the `OPTIONS` request instead:
+_Or_, if you have any configuration that explicitly rejects `OPTIONS` requests, that might return a 403 rather than a 405. We did, in fact, have this as well in our Apache (IHS) `httpd.conf` (as a security best-practice):
+{% highlight apacheconf %}
+RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)$
+RewriteRule .* - [F]
+{% endhighlight %}
+
+So, after adding `OPTIONS` to that list and addressing 405s from elsewhere in the chain, we still saw 403s on the CORS preflight request:
 ![cors-options-error.png]({{site.baseurl}}/assets/cors-options-error.png)
 
-Now what? Attempting a plain `OPTIONS` request through a test tool (Postman) succeeded, so what was different?
+By this point, attempting a plain `OPTIONS` request through a test tool (Postman) succeeded, so what was different?
 
 ## CORS Request Headers
 
