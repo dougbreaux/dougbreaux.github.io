@@ -30,7 +30,7 @@ RUN mkdir /home/default/contrast && \
 
 The next image I tried that hits this same problem right "out of the box" is [the one for the Shaarli bookmarking app](https://hub.docker.com/r/shaarli/shaarli). And while I have [an Issue open](https://github.com/shaarli/Shaarli/issues/1641) to try to get it able to run under OCP, thus far my attempts at the above technique have been unsuccessful.
 
-So in the meantime, I explored how to bypass OCP's default and explicitly allow this container to run as root. [This reference in the older OCP 3.2 documentation](https://docs.openshift.com/enterprise/3.2/admin_guide/manage_scc.html#enable-dockerhub-images-that-require-root) gives the relevant commands for that version. And while I couldn't find the equivalent in the [documentation for the 4.5 version](https://docs.openshift.com/container-platform/4.5/welcome/index.html) that we're running, a bit of extrapolation and the image did start successfully:
+So in the meantime, I explored how to bypass OCP's default and explicitly allow this container to run as root. [This reference in the older OCP 3.11 documentation](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html#enable-dockerhub-images-that-require-root) gives the relevant commands for that version. And while I couldn't find the equivalent in the [documentation for the 4.5 version](https://docs.openshift.com/container-platform/4.5/welcome/index.html) that we're running, a bit of extrapolation and the image did start successfully:
 
 ```console
 $ oc adm policy add-scc-to-user anyuid system:serviceaccount:shaarli:default
