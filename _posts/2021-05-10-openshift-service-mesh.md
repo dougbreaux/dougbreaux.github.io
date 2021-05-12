@@ -149,7 +149,7 @@ I believe there are other approaches here that require more manual configuration
 ## External services
 Istio can manage and visualize connections to external services as well, if those are wrapped in a [`ServiceEntry`](https://istio.io/latest/docs/reference/config/networking/service-entry/) object.
 
-For example, to a JDBC Driver:
+For example, to a remote JDBC endpoint:
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
