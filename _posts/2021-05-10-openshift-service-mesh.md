@@ -174,6 +174,7 @@ The [istioctl command-line tool](https://istio.io/latest/docs/ops/diagnostic-too
 Also, the Kiali tool does some configuration analysis and flags errors or warnings in the Istio configuration. Some of the things it warns about appear to be "best practice" items for Kiali itself, that don't break Istio functionality. But others are genuine mistakes in the configuration.
 
 # References
+- [A Guide to Running your Application in the OpenShift Service Mesh](https://www.openshift.com/blog/a-guide-to-running-your-application-in-the-openshift-service-mesh) - Super useful summary of the steps. Wish I'd seen this one earlier in the process.
 - [Red Hat OpenShift Service Mesh 2.x](https://docs.openshift.com/container-platform/4.7/service_mesh/v2x/servicemesh-release-notes.html)
 - [Deploying applications on Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.7/service_mesh/v2x/prepare-to-deploy-applications-ossm.html)
 - [How to add an application to a Red Hat OpenShift Service Mesh](https://labs.consol.de/development/2020/08/07/adding-application-to-rhsm.html) - pretty useful overview of the whole process
