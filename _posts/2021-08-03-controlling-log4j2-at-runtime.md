@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: 'Controlling log4j Log Level at Runtime, 2.0'
 tags:
   - log4j
