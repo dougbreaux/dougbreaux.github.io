@@ -1,6 +1,6 @@
 ---
 published: false
-title: 'Controlling log4j Log Level at Runtime, Part Deux'
+title: 'Controlling log4j Log Level at Runtime, 2.0'
 tags:
   - log4j
   - java
@@ -22,4 +22,3 @@ Follow-up to https://dougbreaux.github.io/2013/06/05/log4j-log-level.html, adjus
   
 </Configuration>
 ```
-
