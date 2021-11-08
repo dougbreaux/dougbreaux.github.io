@@ -22,10 +22,6 @@ minima:
     linkedin: dougbreaux
   
 #paginate: 10
-#paginate_path: /_posts/page:num/
-
-#markdown: kramdown
-#highlighter: rouge
 
 kramdown:
 #    syntax_highlighter: rouge
@@ -34,7 +30,6 @@ kramdown:
             line_numbers: false
 
 gems:
-#  - jekyll-paginate
 
 # fake Disqus so can do utterances comments without changing base Minima post.html
 disqus:
@@ -44,8 +39,6 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  #- jekyll-paginate
- # for remote themes
- #- jekyll-remote-theme
 
 prose:
   rooturl: '_posts'
