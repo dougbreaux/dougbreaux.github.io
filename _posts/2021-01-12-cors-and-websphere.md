@@ -84,7 +84,7 @@ But even with all that, we were still getting a 403 response from the Preflight 
 
 ### IHS details
 
-So I reached out to an IBM [IHS and WAS expert colleague Eric Covener](https://github.com/covener), who had me enable Apache Module "Request Handler" logging with `%{RH}e` (looking for official reference), which reported `mod_was_ap22_http.c/-2/handler`. Eric says that "-2" means the reponse was forwarded by WebSphere. Thus, this remaining 403 is coming from WebSphere and/or our service, not from IHS.
+So I reached out to an IBM [IHS and WAS expert colleague Eric Covener](https://github.com/covener), who had me enable Apache Module "Request Handler" logging with `%{RH}e` (looking for official reference), which reported `mod_was_ap22_http.c/-2/handler`. Eric says that "-2" means the response was forwarded by WebSphere. Thus, this remaining 403 is coming from WebSphere and/or our service, not from IHS.
 
 That is, `OPTIONS` is being passed down to WebSphere, which isn't handling it. It honestly seemed inconceivable to me that such a low-level detail (only if JSON, Preflight `OPTIONS` will be sent) would have to be explicitly handled by service logic, but apparently it is. 
 
