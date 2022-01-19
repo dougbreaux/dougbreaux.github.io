@@ -38,7 +38,7 @@ We discovered, though, that for `content-type` `application/json`, `POST` reques
 
 [Multiple](https://stackoverflow.com/a/29954326/796761) [references](https://stackoverflow.com/a/43881141/796761) pointed out this behavior, with a pointer to some [official Mozilla Developer Network (MDN) description](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests).
 
-This behavior was occuring for us in all the modern browsers we'd tried, so it wasn't just a quirk. Watching the network requests in the Firefox developer tools, we'd see the `OPTIONS` request sent and fail. (Chrome and Chromium Edge did not explicitly show the `OPTIONS` request, BTW, only the failed subsequent/overall request. And I want to say it was appearing as a `GET` instead of `POST` too, but I can't remember for certain.)
+This behavior was occurring for us in all the modern browsers we'd tried, so it wasn't just a quirk. Watching the network requests in the Firefox developer tools, we'd see the `OPTIONS` request sent and fail. (Chrome and Chromium Edge did not explicitly show the `OPTIONS` request, BTW, only the failed subsequent/overall request. And I want to say it was appearing as a `GET` instead of `POST` too, but I can't remember for certain.)
 
 ## HTTP `OPTIONS`
 
