@@ -17,8 +17,8 @@ Follow-up to:
 
 From command-line (including Git Bash on Windows):
 ```console
-$ ssh -J jump-server-user@jump.my.domain.com \
+$ ssh -J jump-server-user@jump.mydomain.com \
 -D8888 \
--L2222:any.protected.domain.com:22 \
-protected-server-user@any.protected.my.domain.com
+-L2222:any-protected.mydomain.com:22 \
+protected-server-user@any-protected.mydomain.com
 ```
