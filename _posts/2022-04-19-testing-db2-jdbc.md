@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Testing DB2 JDBC connectivity
 tags:
   - db2
