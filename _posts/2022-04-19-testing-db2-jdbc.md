@@ -8,7 +8,7 @@ tags:
 ---
 Useful ability to test DB2 JDBC connectivity, given only a JRE and the JCC jar file. 
 
-Found at https://www.ibm.com/support/pages/stand-alone-test-programs
+Found at [https://www.ibm.com/support/pages/stand-alone-test-programs](https://www.ibm.com/support/pages/stand-alone-test-programs)
 
 ```console
 $ java -cp /path/to/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url jdbc:db2://server:60000/database -user dbuser -password $DB_PASSWORD
