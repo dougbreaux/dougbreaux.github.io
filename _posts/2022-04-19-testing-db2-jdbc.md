@@ -16,7 +16,7 @@ $ java -cp /path/to/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url jdbc:db2://server:60
 [jcc][10516][13709]Test Connection Successful.
 DB product version = SQL110570
 DB product name = DB2/LINUXX8664
-DB URL = jdbc:db2://sever:60000/database
+DB URL = jdbc:db2://server:60000/database
 DB Drivername = IBM Data Server Driver for JDBC and SQLJ
 DB OS Name = Linux
 ```
