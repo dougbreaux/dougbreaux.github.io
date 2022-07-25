@@ -14,6 +14,9 @@ show_excerpts: true
 # to get latest master
 remote_theme: jekyll/minima
 
+# https://github.com/jekyll/minima#available-skins
+# solarized adjusts to user's dark/light system theme
+# use solarized-light or -dark to force one
 minima:
   skin: solarized
   social_links:
