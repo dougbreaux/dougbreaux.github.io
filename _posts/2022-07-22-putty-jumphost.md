@@ -14,7 +14,7 @@ tags:
 - Built-in support for proxying via another SSH server, so that PuTTY will SSH to the proxy and then automatically forward a port through it to the destination host. (Similar to running plink -nc as a subprocess, but more convenient to set up, and allows you to answer interactive prompts presented by the proxy.)
 - Support for HTTP Digest authentication, when talking to HTTP proxies.
 
-Note, in particular, this removes the need for `plink` and its command-line options, as described in {% post_url 2011-02-03-tunneling-with-plink %}
+Note, in particular, this removes the need for `plink` and its command-line options, as described in [SSH key authentication with PuTTY, Part 2, Tunneling with Plink]({% post_url 2011-02-03-tunneling-with-plink %}).
 
 ![PuTTY-with-SSH-proxy.png]({{site.baseurl}}/assets/PuTTY-with-SSH-proxy.png)
 
