@@ -17,3 +17,5 @@ tags:
 - Support for HTTP Digest authentication, when talking to HTTP proxies.
 
 Note, in particular, this removes the need for `plink` and its command-line options, as described in {% post_url 2011-02-03-tunneling-with-plink %}
+
+![PuTTY-with-SSH-proxy.png]({{site.baseurl}}/assets/PuTTY-with-SSH-proxy.png)
