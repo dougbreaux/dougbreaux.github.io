@@ -7,8 +7,6 @@ tags:
   - tunnel
   - proxy
 ---
-## PuTTY proxy improvements
-
 [PuTTY 0.77 introduced some new proxy capabilities](https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html) (2022-05-07) that simplify setting up a "jump" host. 
 
 > Major improvements to network proxy support:
@@ -19,3 +17,5 @@ tags:
 Note, in particular, this removes the need for `plink` and its command-line options, as described in {% post_url 2011-02-03-tunneling-with-plink %}
 
 ![PuTTY-with-SSH-proxy.png]({{site.baseurl}}/assets/PuTTY-with-SSH-proxy.png)
+
+See [The Proxy Panel](https://the.earth.li/~sgtatham/putty/0.77/htmldoc/Chapter4.html#config-proxy) online help.
