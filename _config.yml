@@ -18,7 +18,7 @@ remote_theme: jekyll/minima
 # solarized adjusts to user's dark/light system theme
 # use solarized-light or -dark to force one
 minima:
-  skin: solarized
+  skin: solarized-light
   social_links:
     github: dougbreaux
     stackoverflow: "796761"
