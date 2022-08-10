@@ -9,13 +9,13 @@ show_excerpts: true
 baseurl: ""
 url: "https://dougbreaux.github.io"
 
-#theme: minima
+theme: minima
 #github_username: dougbreaux
 #linkedin_username: dougbreaux
 #rss: rss
 
 # to get latest master
-remote_theme: jekyll/minima
+#remote_theme: jekyll/minima
 
 # https://github.com/jekyll/minima#available-skins
 # solarized adjusts to user's dark/light system theme
