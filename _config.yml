@@ -6,6 +6,9 @@ description: > # this means to ignore newlines until "show_excerpts:"
   Topics from my software development meanderings.
 show_excerpts: true
 
+baseurl: ""
+url: "https://dougbreaux.github.io"
+
 #theme: minima
 #github_username: dougbreaux
 #linkedin_username: dougbreaux
