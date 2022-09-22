@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 Documenting the steps to accept `multipart/form-data` submission of a file over JAX-RS, in current versions of WebSphere Liberty.
 
