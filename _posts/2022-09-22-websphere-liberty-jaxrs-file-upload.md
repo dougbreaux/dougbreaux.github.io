@@ -75,36 +75,36 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
             String attachmentName = dataHandler.getName();
 
             if (attachmentName == null) {
-        	    log.warn("Nameless attachment found");
-        	    continue;
+                log.warn("Nameless attachment found");
+                continue;
             }
 
-        	MediaType contentType = attachment.getContentType();
+            MediaType contentType = attachment.getContentType();
 
             // plain text attachments are simple "request parameters"
             if (contentType == MediaType.TEXT_PLAIN_TYPE) {
 
                 try {
-			        String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-			        log.debug("part {}={}", attachmentName, value);
-			        params.put(attachmentName, value);
-			    }
+                    String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+                    log.debug("part {}={}", attachmentName, value);
+                    params.put(attachmentName, value);
+                }
 
-        	    catch (IOException e) {
-        	        String msg = "Invalid text value submitted for " + attachmentName;
+                catch (IOException e) {
+                    String msg = "Invalid text value submitted for " + attachmentName;
                     log.error("{}: {}", msg, e.toString());
 
                     return Response.status(Status.BAD_REQUEST).entity(msg).build();
-			    }
+                }
             }
 
             // default, assume only one file of acceptable type
             else {
 
-	            log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
-	                      attachmentName, contentType, attachment.getHeader("Content-Disposition"));
+                log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
+                          attachmentName, contentType, attachment.getHeader("Content-Disposition"));
 
-	            try {
+                try {
                     ... 
 	                file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
 	            }
