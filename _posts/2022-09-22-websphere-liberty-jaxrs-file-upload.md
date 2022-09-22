@@ -20,12 +20,12 @@ Note, first, that this is again using a Liberty-specific implementation and clas
 ### Maven dependency
 
 ```xml
-		<dependency>
-		    <groupId>com.ibm.websphere.appserver.api</groupId>
-		    <artifactId>com.ibm.websphere.appserver.api.jaxrs20</artifactId>
-		    <version>1.1.68</version>
-		    <scope>provided</scope>
-		</dependency>
+<dependency>
+    <groupId>com.ibm.websphere.appserver.api</groupId>
+    <artifactId>com.ibm.websphere.appserver.api.jaxrs20</artifactId>
+    <version>1.1.68</version>
+    <scope>provided</scope>
+</dependency>
 ```
 
 ### Liberty server.xml
@@ -56,6 +56,7 @@ contentType: text/plain, Content-Disposition: form-data; name="plateNumber"
 contentType: application/pdf, Content-Disposition: form-data; name="document"; filename="file.pdf"
 ```
 ```java
+    {
 ...
         File file = null;
         Map<String, String> params = new HashMap<>();
