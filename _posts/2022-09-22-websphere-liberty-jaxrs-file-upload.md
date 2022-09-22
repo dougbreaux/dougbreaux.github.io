@@ -1,4 +1,6 @@
 ---
+title: WebSphere Liberty JAX-RS File Upload
+tags: [ upload, jax-rs, http, file, websphere, rest, jaxrs, liberty ]
 published: true
 ---
 Documenting the steps to accept `multipart/form-data` submission of a file over JAX-RS, in current versions of WebSphere Liberty.
