@@ -39,6 +39,8 @@ Method signature that to accept `multipart/form-data` and have access to the rig
 ```java
 import javax.activation.DataHandler;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import com.ibm.websphere.jaxrs20.multipart.IAttachment
 ...
     @POST
@@ -63,44 +65,44 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
 
         for (IAttachment attachment : attachments) {
 
-        	if (attachment == null) {
-        		log.warn("processSubmit: Empty attachment found");
-        		continue;
-        	}
+            if (attachment == null) {
+                log.warn("processSubmit: Empty attachment found");
+                continue;
+            }
 
-        	DataHandler dataHandler = attachment.getDataHandler();
+            DataHandler dataHandler = attachment.getDataHandler();
 
-        	String attachmentName = dataHandler.getName();
+            String attachmentName = dataHandler.getName();
 
             if (attachmentName == null) {
-        		log.warn("Nameless attachment found");
-        		continue;
+        	    log.warn("Nameless attachment found");
+        	    continue;
             }
 
         	MediaType contentType = attachment.getContentType();
 
-        	// plain text attachments are simple "request parameters"
-        	if (contentType == MediaType.TEXT_PLAIN_TYPE) {
+            // plain text attachments are simple "request parameters"
+            if (contentType == MediaType.TEXT_PLAIN_TYPE) {
 
-        		try {
-					String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-					log.debug("part {}={}", attachmentName, value);
-					params.put(attachmentName, value);
-				}
+                try {
+			        String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+			        log.debug("part {}={}", attachmentName, value);
+			        params.put(attachmentName, value);
+			    }
 
-        		catch (IOException e) {
-        			String msg = "Invalid text value submitted for " + attachmentName;
+        	    catch (IOException e) {
+        	        String msg = "Invalid text value submitted for " + attachmentName;
                     log.error("{}: {}", msg, e.toString());
 
                     return Response.status(Status.BAD_REQUEST).entity(msg).build();
-				}
-        	}
+			    }
+            }
 
-        	// default, assume only one file of acceptable type
-        	else {
+            // default, assume only one file of acceptable type
+            else {
 
 	            log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
-	            		  attachmentName, contentType, attachment.getHeader("Content-Disposition"));
+	                      attachmentName, contentType, attachment.getHeader("Content-Disposition"));
 
 	            try {
                     ... 
@@ -111,7 +113,7 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
 	                log.error("processSubmit: saveToFile: " + e.toString());
                     return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Unable to save file").build();
 	            }
-        	}
+            }
         }
 
         if (file == null) {
