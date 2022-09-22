@@ -119,6 +119,6 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
             return Response.status(Status.BAD_REQUEST).entity(msg).build();
         }
 
-        return processFile(file, params);
+        return yourCodeToProcessTheFileAndTextFields(file, params);
     }
 ```
