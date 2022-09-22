@@ -106,13 +106,13 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
 
                 try {
                     ... 
-	                file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
-	            }
+                    file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
+                }
 
-	            catch (IOException e) {
-	                log.error("processSubmit: saveToFile: " + e.toString());
+                catch (IOException e) {
+                    log.error("processSubmit: saveToFile: " + e.toString());
                     return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Unable to save file").build();
-	            }
+                }
             }
         }
 
