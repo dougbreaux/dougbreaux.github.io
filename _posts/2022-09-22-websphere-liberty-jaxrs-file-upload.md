@@ -1,6 +1,14 @@
 ---
 title: WebSphere Liberty JAX-RS File Upload
-tags: [ upload, jax-rs, http, file, websphere, rest, jaxrs, liberty ]
+tags:
+  - upload
+  - jax-rs
+  - http
+  - file
+  - websphere
+  - rest
+  - jaxrs
+  - liberty
 published: true
 ---
 Documenting the steps to accept `multipart/form-data` submission of a file over JAX-RS, in current versions of WebSphere Liberty.
@@ -81,10 +89,28 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
                 continue;
             }
 
-            MediaType contentType = attachment.getContentType();
+            String contentDisposition = attachment.getHeader("Content-Disposition");
 
-            // plain text attachments are simple "request parameters"
-            if (contentType == MediaType.TEXT_PLAIN_TYPE) {
+            log.debug("attachmentName: {}, contentType: {}, Content-Disposition: {}",
+          	          attachmentName, attachment.getContentType(), contentDisposition);
+
+            // look for "filename=" to determine files vs. parameters
+            if (contentDisposition.toLowerCase().contains("filename=")) {
+                log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
+                          attachmentName, contentType, attachment.getHeader("Content-Disposition"));
+
+                try {
+                    ... 
+                    file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
+                }
+
+                catch (IOException e) {
+                    log.error("processSubmit: saveToFile: " + e.toString());
+                    return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Unable to save file").build();
+                }
+            }
+
+            else {
 
                 try {
                     String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
@@ -100,22 +126,6 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
                 }
             }
 
-            // default, assume only one file of acceptable type
-            else {
-
-                log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
-                          attachmentName, contentType, attachment.getHeader("Content-Disposition"));
-
-                try {
-                    ... 
-                    file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
-                }
-
-                catch (IOException e) {
-                    log.error("processSubmit: saveToFile: " + e.toString());
-                    return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Unable to save file").build();
-                }
-            }
         }
 
         if (file == null) {
