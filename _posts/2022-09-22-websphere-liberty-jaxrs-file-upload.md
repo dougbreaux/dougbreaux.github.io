@@ -53,10 +53,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import com.ibm.websphere.jaxrs20.multipart.IAttachment
 ...
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response submitFile(
-        List<IAttachment> attachments) throws IOException
+@POST
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+public Response submitFile(
+    List<IAttachment> attachments) throws IOException
 ```
 
 Note that we're submitting both text-field values and a file, and only 1 file at a time. Thus, some of the simple logic below was sufficient.
@@ -68,72 +68,72 @@ contentType: text/plain, Content-Disposition: form-data; name="plateNumber"
 contentType: application/pdf, Content-Disposition: form-data; name="document"; filename="file.pdf"
 ```
 ```java
-    {
+{
 ...
-        File file = null;
-        Map<String, String> params = new HashMap<>();
+    File file = null;
+    Map<String, String> params = new HashMap<>();
 
-        for (IAttachment attachment : attachments) {
+    for (IAttachment attachment : attachments) {
 
-            if (attachment == null) {
-                log.warn("processSubmit: Empty attachment found");
-                continue;
-            }
-
-            DataHandler dataHandler = attachment.getDataHandler();
-
-            String attachmentName = dataHandler.getName();
-
-            if (attachmentName == null) {
-                log.warn("Nameless attachment found");
-                continue;
-            }
-
-            String contentDisposition = attachment.getHeader("Content-Disposition");
-
-            log.debug("attachmentName: {}, contentType: {}, Content-Disposition: {}",
-          	          attachmentName, attachment.getContentType(), contentDisposition);
-
-            // look for "filename=" to determine files vs. parameters
-            if (contentDisposition.toLowerCase().contains("filename=")) {
-                log.debug("fileName: {}, contentType: {}, Content-Disposition: {}",
-                          attachmentName, contentType, attachment.getHeader("Content-Disposition"));
-
-                try {
-                    ... 
-                    file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
-                }
-
-                catch (IOException e) {
-                    log.error("processSubmit: saveToFile: " + e.toString());
-                    return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Unable to save file").build();
-                }
-            }
-
-            else {
-
-                try {
-                    String value = new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-                    log.debug("part {}={}", attachmentName, value);
-                    params.put(attachmentName, value);
-                }
-
-                catch (IOException e) {
-                    String msg = "Invalid text value submitted for " + attachmentName;
-                    log.error("{}: {}", msg, e.toString());
-
-                    return Response.status(Status.BAD_REQUEST).entity(msg).build();
-                }
-            }
-
+        if (attachment == null) {
+            log.warn("processSubmit: Empty attachment found");
+            continue;
         }
 
-        if (file == null) {
-            String msg = "No file parameter was submitted.";
-            log.warn(msg);
-            return Response.status(Status.BAD_REQUEST).entity(msg).build();
+        DataHandler dataHandler = attachment.getDataHandler();
+
+        String attachmentName = dataHandler.getName();
+
+        if (attachmentName == null) {
+            log.warn("Nameless attachment found");
+            continue;
         }
 
-        return yourCodeToProcessTheFileAndTextFields(file, params);
+        String contentDisposition = attachment.getHeader("Content-Disposition");
+
+        log.debug("attachmentName: {}, contentType: {}, Content-Disposition: {}",
+       	          attachmentName, attachment.getContentType(), contentDisposition);
+
+        // look for "filename=" to determine files vs. parameters
+        if (contentDisposition.toLowerCase().contains("filename=")) {
+
+            try {
+                ... 
+                file = yourCodeToMakeAFileFromInputStream(dataHandler.getInputStream());
+            }
+
+            catch (IOException e) {
+                log.error("processSubmit: saveToFile: " + e.toString());
+                return Response.status(Status.INTERNAL_SERVER_ERROR).
+                                entity("Unable to save file").build();
+            }
+        }
+
+        else {
+
+            try {
+                String value = 
+                    new String(dataHandler.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+                log.debug("part {}={}", attachmentName, value);
+                params.put(attachmentName, value);
+            }
+
+            catch (IOException e) {
+                String msg = "Invalid text value submitted for " + attachmentName;
+                log.error("{}: {}", msg, e.toString());
+
+                return Response.status(Status.BAD_REQUEST).entity(msg).build();
+            }
+        }
+
     }
+
+    if (file == null) {
+        String msg = "No file parameter was submitted.";
+        log.warn(msg);
+        return Response.status(Status.BAD_REQUEST).entity(msg).build();
+    }
+
+    return yourCodeToProcessTheFileAndTextFields(file, params);
+}
 ```
