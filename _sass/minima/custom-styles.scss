@@ -2,3 +2,6 @@
 .post-content {
   h1, h2, h3 { margin-top: $spacing-unit * 1.1 }
 }
+
+// allow more horizontal space
+.wrapper { max-width: 65%; }
