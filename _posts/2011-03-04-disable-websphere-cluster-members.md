@@ -1,6 +1,15 @@
 ---
 title: Temporarily Disabling WebSphere Cluster Members
-tags: [plugin,cluster,ihs,web-server,was,webserver,failover,websphere]
+tags:
+  - plugin
+  - cluster
+  - ihs
+  - web-server
+  - was
+  - webserver
+  - failover
+  - websphere
+published: true
 ---
 ### Background
 
@@ -12,7 +21,7 @@ A quick workaround is to manually edit the plugin's configuration file on each w
 
 On our AIX systems, the plugin configuration file is in a location like:
 
-/usr/IBM/HTTPServer/Plugins/config/<webservername>/plugin-cfg.xml
+`/usr/IBM/HTTPServer/Plugins/config/<webservername>/plugin-cfg.xml`
 
 _(If you're ever uncertain you're looking in the correct location, look for the WebSpherePluginConfig directive in the IHS httpd.conf file.)_
 
@@ -56,4 +65,4 @@ The only change we have to make is to comment-out the specific Server which we w
 
 1.  Don't forget to make this change on each Web Server which is configured to send requests to the Cluster.
 2.  Don't forget to make this change for each relevant Cluster within the file. That is, if an entire Node is being taken down, each Cluster's PrimaryServers list must be edited.
-3.  If someone knows an easier way to do this, or why stopping a server from the console doesn't automatically, immediately accomplish the same thing, please enlighten me!  
+3.  If someone knows an easier way to do this, or why stopping a server from the console doesn't automatically, immediately accomplish the same thing, please enlighten me!
