@@ -20,6 +20,6 @@ Note, in particular, this removes the need for `plink` and its command-line opti
 
 See [The Proxy Panel](https://the.earth.li/~sgtatham/putty/0.77/htmldoc/Chapter4.html#config-proxy) online help.
 
-Update: Proxy types now a drop-down list, instead of radio-buttons, in PuTTY 0.78:
+Update: in PuTTY 0.78, Proxy type is now a drop-down list instead of radio-buttons:
 ![0.78 Proxy Panel]({{site.baseurl}}/assets/PuTTY-proxy-78.png)
 
