@@ -44,7 +44,7 @@ I'm currently using feature `webProfile-8.0`, which includes the necessary subfe
 
 ### Java Resource
 
-Method signature that to accept `multipart/form-data` and have access to the right kinds of objects to process the uploaded file (along with other, non-file "parts"):
+Method signature to accept `multipart/form-data` and have access to the right kinds of objects to process the uploaded file (along with other, non-file "parts"):
 
 ```java
 import javax.activation.DataHandler;
@@ -103,7 +103,7 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
             }
 
             catch (IOException e) {
-                log.error("processSubmit: saveToFile: " + e.toString());
+                log.error("Failed to make File from InputStream: " + e.toString());
                 return Response.status(Status.INTERNAL_SERVER_ERROR).
                                 entity("Unable to save file").build();
             }
