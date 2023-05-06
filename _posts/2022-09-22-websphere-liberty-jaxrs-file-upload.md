@@ -76,7 +76,7 @@ contentType: application/pdf, Content-Disposition: form-data; name="document"; f
     for (IAttachment attachment : attachments) {
 
         if (attachment == null) {
-            log.warn("processSubmit: Empty attachment found");
+            log.warn("Empty attachment found");
             continue;
         }
 
