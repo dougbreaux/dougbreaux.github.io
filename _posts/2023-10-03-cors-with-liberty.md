@@ -7,10 +7,11 @@ tags:
   - cors
   - kubernetes
   - openshift
+title: CORS with WebSphere/Open Liberty
 ---
-## WebSphere/Open Liberty CORS configuration
+Follow-up to [CORS and WebSphere](/2021/01/12/cors-and-websphere.html), for WebSphere Liberty or OpenLiberty.
 
-Follow-up to [CORS and WebSphere](/2021/01/12/cors-and-websphere.html)
+## WebSphere/Open Liberty CORS configuration
 
 With WL/OL, CORS settings can be managed entirely within `server.xml`. 
 
@@ -27,9 +28,9 @@ The relevant bit for that file looks something like:
 
 This element can either be added directly to `server.xml` or put in a separate file and included in, say, `/config/configDropins/overrides`.
 
-### Mounting in OpenShift/Kubernetes pods
+## Mounting in OpenShift/Kubernetes pods
 
-#### ConfigMap
+### ConfigMap
 
 Next, we can define a k8s `ConfigMap` that contains this file content, and mount it into the Liberty pods without changing their images. Among other things, this allows sharing of common rules across multiple apps, without having to maintain the allow list in each image.
 
@@ -52,7 +53,7 @@ data:
     </server>
 ```
 
-#### Volume
+### Volume
 
 We use the OpenLibertyOperator under OpenShift, so in our OpenLibertyApplication YAML, we mount the above `ConfigMap` file into each pod's `/config/configDropins/overrides` location like this:
 
