@@ -1,5 +1,12 @@
 ---
-published: false
+published: true
+tags:
+  - websphere
+  - liberty
+  - openliberty
+  - cors
+  - kubernetes
+  - openshift
 ---
 ## WebSphere/Open Liberty CORS configuration
 
