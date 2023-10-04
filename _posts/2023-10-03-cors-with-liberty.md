@@ -73,7 +73,7 @@ kind: OpenLibertyApplication
 ...
 ```
 
-### References
+## References
 
 (Some repeated from earlier post.)
 
