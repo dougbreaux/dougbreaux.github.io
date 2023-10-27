@@ -84,7 +84,7 @@ I'm going to validate entire "model" objects being passed into my Spring MVC Con
 
 [WebSphere supports](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/rdat_beanvalconstraints.html) the JSR 303 [Built-in Constraint definitions](http://beanvalidation.org/1.0/spec/#d0e5601), so we can use any of those or create our own.
 
-Here's an excerpt from an annotated model POJO, showing multiple annotation types, both with and without custom error messages:
+Here's an excerpt from an annotated model POJO, showing multiple annotation types, also with custom error messages:
 ```java
 public class TransactionRequest {  
     @NotNull(message="Business Unit is required")
@@ -116,7 +116,7 @@ public class TransactionController {
     ...
 }
 ```
-Where `@Controller`, `@PostMapping`, and `@RequestBody` annotations are from Spring MVC, but @Valid is the JSR 303 generic `javax.validation.Valid`.
+Where `@Controller`, `@PostMapping`, and `@RequestBody` annotations are from Spring MVC, but `@Valid` is the JSR 303 generic `javax.validation.Valid`.
 
 ## Result
 
