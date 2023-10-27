@@ -84,7 +84,7 @@ I'm going to validate entire "model" objects being passed into my Spring MVC Con
 
 [WebSphere supports](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/rdat_beanvalconstraints.html) the JSR 303 [Built-in Constraint definitions](http://beanvalidation.org/1.0/spec/#d0e5601), so we can use any of those or create our own.
 
-Here's an excerpt from an annotated model POJO, showing multiple annotation types, also with custom error messages:
+Here's an excerpt from an annotated model POJO, showing multiple annotation types, both with and without custom error messages:
 ```java
 public class TransactionRequest {  
     @NotNull(message="Business Unit is required")
@@ -131,4 +131,4 @@ Content-Type: text/html;charset=ISO-8859-1
 ...  
 Error 400: SRVE0295E: Error reported: 400
 ````
-So [in my next post, I describe a Spring MVC way to improve on that]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
+So, [in my next post, I describe a Spring MVC way to improve on that]({% post_url 2018-05-23-springmvc-jsr303-validation-customization %}).
