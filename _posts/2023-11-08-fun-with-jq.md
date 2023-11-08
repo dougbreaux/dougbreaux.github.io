@@ -51,5 +51,5 @@ I worked out this `jq` filter to pull merge two fields with an equals sign betwe
 Or, from the jqplay.org site, the following jq command:
 
 ```shell
-jq --raw-output '.result[] | "\(.countryCode)=\(.countryDisplayValue)"'
+$ jq --raw-output '.result[] | "\(.countryCode)=\(.countryDisplayValue)"'
 ```
