@@ -6,7 +6,7 @@ tags:
   - scripting
 title: Parsing JSON with jq
 ---
-[`jq`](https://jqlang.github.io/jq/) is such a useful, powerful tool for parsing the JSON data than many APIs produce.
+[`jq`](https://jqlang.github.io/jq/) is such a useful, powerful tool for parsing the JSON data that many APIs produce.
 
 Albeit perhaps a bit cryptic in syntax (much like regex). But there's also this fantastic playground at [jqplay.org](https://jqplay.org/) for testing options and producing the command syntax for you.
 
