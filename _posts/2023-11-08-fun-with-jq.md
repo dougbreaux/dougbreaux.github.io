@@ -46,7 +46,7 @@ I worked out this `jq` filter to merge two fields with an equals sign between th
 
 `.result[] | "\(.countryCode)=\(.countryDisplayValue)"`
 
-Or, from the jqplay.org site, the following jq command:
+Or the following jq command:
 
 ```shell
 $ jq --raw-output '.result[] | "\(.countryCode)=\(.countryDisplayValue)"'
