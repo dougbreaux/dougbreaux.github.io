@@ -42,7 +42,7 @@ Using [this comment in a GitHub Issue](https://github.com/jqlang/jq/issues/2247#
 ...
 ```
 
-I worked out this `jq` filter to merge two fields with an equals sign between them:
+We can use this `jq` filter to merge two fields with an equals sign between them:
 
 `.result[] | "\(.countryCode)=\(.countryDisplayValue)"`
 
