@@ -42,7 +42,7 @@ Using [this comment in a GitHub Issue](https://github.com/jqlang/jq/issues/2247#
 ...
 ```
 
-I worked out this `jq` filter to pull merge two fields with an equals sign between them:
+I worked out this `jq` filter to merge two fields with an equals sign between them:
 
 `.result[] | "\(.countryCode)=\(.countryDisplayValue)"`
 
@@ -50,4 +50,10 @@ Or, from the jqplay.org site, the following jq command:
 
 ```shell
 $ jq --raw-output '.result[] | "\(.countryCode)=\(.countryDisplayValue)"'
+```
+
+Output like:
+```properties
+AF=Afghanistan
+AX=Aland Islands
 ```
