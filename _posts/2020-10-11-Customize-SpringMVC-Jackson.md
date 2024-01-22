@@ -1,6 +1,11 @@
 ---
 title: Customizing SpringMVC Jackson Behaviors
-tags: [ spring, springmvc, jackson, json ]
+tags:
+  - spring
+  - springmvc
+  - jackson
+  - json
+published: true
 ---
 These days it seems almost all examples of doing anything with Spring assume Spring Boot, which we're not using. So here's my foray into modifying the Jackson `ObjectMapper` that SpringMVC configures and customizes by default.
 
@@ -15,7 +20,7 @@ After some Stack Overflow searches (again, almost entirely addressing how to do 
  */
 @EnableWebMvc
 @Configuration
-public class CustomWebConfiguration extends WebMvcConfigurerAdapter {
+public class CustomWebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
