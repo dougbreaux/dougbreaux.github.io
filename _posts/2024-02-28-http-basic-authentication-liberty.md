@@ -13,8 +13,6 @@ tags:
   - security
 title: HTTP Basic Authentication with WebSphere/Open Liberty
 ---
-## HTTP Basic Authentication with Liberty
-
 Collecting the steps to add HTTP Basic Authentication to a Liberty web application. 
 
 In this simple case, the need to restrict access to the entire application to a tiny set of preconfigured users.
