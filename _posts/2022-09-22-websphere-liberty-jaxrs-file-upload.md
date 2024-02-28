@@ -25,7 +25,7 @@ Documenting the steps to accept `multipart/form-data` submission of a file over 
 
 Note, first, that this is again using a Liberty-specific implementation and class. However,
 1. It's not dependent on the internal, third party library Liberty uses for JAX-RS (previously Apache Wink, now Apache CXF)
-1. It's using an approach that hopefully will be somewhat similar to what is now in [Jakarata Rest 3.1](https://jakarta.ee/specifications/restful-ws/3.1/) (March, 2022), not yet [available in Liberty](https://www.ibm.com/docs/en/was-liberty/base?topic=management-liberty-features), but maybe imminently?
+1. It's using an approach that hopefully will be somewhat similar to what is now in [Jakarta Rest 3.1](https://jakarta.ee/specifications/restful-ws/3.1/) (March, 2022), not yet [available in Liberty](https://www.ibm.com/docs/en/was-liberty/base?topic=management-liberty-features), but maybe imminently?
 
 ### Maven dependency
 
