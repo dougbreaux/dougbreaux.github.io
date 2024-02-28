@@ -110,4 +110,4 @@ stringData:
 type: Opaque
 ```
 
-Yes, this approach "hardcodes" into the image that we have 2 allowed users. You could also mount an entire "file" Secret into the Liberty `overrides` directory if you need more flexibility add or remove users without updating the container image.
+Yes, this approach "hardcodes" into the image that we have 2 allowed users. You could also mount an entire "file" Secret into the Liberty `overrides` directory if you need more flexibility to add or remove users without updating the container image.
