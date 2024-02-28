@@ -91,7 +91,7 @@ spec:
 ...
   envFrom:
     - secretRef:
-        name: basic-auth-cfp
+        name: basic-auth
 ```
 
 And the Secret YAML:
