@@ -60,7 +60,7 @@ Add the necessary Liberty feature(s):
 
 Add a user registry:
 ```xml
-    <basicRegistry id="basic" realm="AZ MVD CheckFreePay">
+    <basicRegistry id="basic" realm="My Application Realm">
         <user name="${USER_1}" password="${PASSWORD_1}" />
         <user name="${USER_2}" password="${PASSWORD_2}" />
     </basicRegistry>
