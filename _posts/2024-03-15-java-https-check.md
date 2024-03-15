@@ -5,7 +5,6 @@ tags:
   - security
   - tls
 title: Check HTTP(S) Connectivity in Java
-published: false
 ---
 Trivial Java code to try an HTTP connection to a URL. In particular, this can be useful to see whether your Java environment and its SSL/TLS configuration will successfully connect to an https URL.
 
