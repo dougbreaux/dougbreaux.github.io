@@ -10,8 +10,6 @@ title: Parsing JSON with jq
 
 Albeit perhaps a bit cryptic in syntax (much like regex). But there's also this fantastic playground at [jqplay.org](https://jqplay.org/) for testing options and producing the command syntax for you.
 
-(Side note, if you're on Windows and have installed Git for Windows, `jq` is part of the install!)
-
 ### Selecting fields from an array
 
 My particular need was to get the results of an API call that produces an array of "allowed" values for a data field - Country codes in this case - and convert that into a list of name-value pairs for use elsewhere.
