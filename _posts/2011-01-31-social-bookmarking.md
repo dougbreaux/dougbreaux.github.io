@@ -18,24 +18,20 @@ To find everything I've tagged with both "websphere" and "jax-rs". Or
 
 To find everything everyone on DeveloperWorks has similarly tagged. Here are some search strings to use with both DeveloperWorks' Bookmarks and Delicious:
 
-<dl dir="ltr">
+* `https://www.ibm.com/developerworks/mydeveloperworks/bookmarks/html?lang=en&access=any&userid=0100002GMN&tag=%s`
 
-<dt>https://www.ibm.com/developerworks/mydeveloperworks/bookmarks/html?lang=en&access=any&userid=0100002GMN&tag=%s</dt>
+  Search my own tags. You need to find your own userid by clicking on "My Bookmarks". I use Keyword `mydw`.
 
-<dd>Search my own tags. You need to find your own userid by clicking on "My Bookmarks". I use Keyword "**mydw**".</dd>
+* `https://www.ibm.com/developerworks/mydeveloperworks/bookmarks/html?lang=en&access=any&tag=%s`
 
-<dt>https://www.ibm.com/developerworks/mydeveloperworks/bookmarks/html?lang=en&access=any&tag=%s</dt>
+  Search all DeveloperWorks tags. Keyword `dw`.
 
-<dd>Search all DeveloperWorks tags. Keyword <strong>dw</strong>.</dd>
+* `http://www.delicious.com/&lt;userid&gt;/%s`
 
-<dt>http://www.delicious.com/&lt;userid&gt;/%s</dt>
+  Search user's tags on Delicious.com. Keyword `mydel`.
 
-<dd>Search user's tags on Delicious.com. Keyword <strong>mydel</strong>.</dd>
+* `http://www.delicious.com/tag/%s`
 
-<dt>http://www.delicious.com/tag/%s</dt>
-
-<dd>Search all Delicious.com tags. Keyword <strong>del</strong>.</dd>
-
-</dl>
+  Search all Delicious.com tags. Keyword `del`.
 
 **Bonus Tip:** in many modern browsers, including Firefox, Alt-Enter will open a new tab to display the results of the submitted request. Use that here to bring up your search results in a new tab.
