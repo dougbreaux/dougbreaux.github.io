@@ -14,7 +14,7 @@ See [TestHttp](https://github.com/dougbreaux/Java-Web-Tools/blob/master/src/main
 
 Run it like:
 ```console
-java -Djavax.net.ssl.trustStore=/config/trust.jks -Djavax.net.ssl.keyStorePassword=$TRUST_PASSWORD TestHttp https://example.com
+java -Djavax.net.ssl.trustStore=/config/trust.jks -Djavax.net.ssl.trustStorePassword=$TRUST_PASSWORD TestHttp https://example.com
 ```
 
 ### JSP
