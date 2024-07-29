@@ -27,7 +27,7 @@ Combining those, we can build container images with a directory defined and adde
 
 ### server.xml
 
-Define a [`<library`>](https://openliberty.io/docs/latest/reference/config/library.html) element to point to a filesystem location to contain the expected file(s):
+Define a [`<library>`](https://openliberty.io/docs/latest/reference/config/library.html) element to point to a filesystem location to contain the expected file(s):
 
 ```xml
 <!-- external classpath directory for injecting property file overrides -->
