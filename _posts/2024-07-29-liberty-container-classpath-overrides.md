@@ -65,7 +65,17 @@ USER 1001
 
 ### Create the Kubernetes resources
 
+In my case, using the OpenShift admin web UI.
 
+The appropriate Secret(s) must be configured in each namespace (Project) that needs them. (Secrets cannot be shared across Kubernetes namespaces - a.k.a. OpenShift Projects).
+
+A simple way to do this is to create a new **Key/value secret** and upload a properties file as its contents:
+
+![create-secret.png]({{site.baseurl}}/assets/create-secret.png)
+
+![create-secret2.png]({{site.baseurl}}/assets/create-secret2.png)
+
+Then edit the file content to set the correct values for each property in the particular environment.
 
 ### Volume mounts
 
