@@ -1,6 +1,16 @@
 ---
 title: JAX-RS in WebSphere to accept uploaded files
-tags: [ .net, upload, internet-explorer, jax-rs, http, c#, file, websphere, rest, wink ]
+tags:
+  - .net
+  - upload
+  - internet-explorer
+  - jax-rs
+  - http
+  - c#
+  - file
+  - websphere
+  - rest
+  - wink
 ---
 We've recently had a need to accept files submitted by a partner and perform some processing on them, with the partner returning later to retrieve the results. Rather than the "old", standard approach of using something like sftp and regularly kicking off a cron job to look for input files, this seemed like a good case for a Web Service.
 
@@ -78,5 +88,5 @@ Our partner appears to be using a C# .NET client, and even after he had success 
 
 ### Later notes
 
-* Regarding IE behavior, also see URLACTION_HTML_INCLUDE_FILE_PATH at https://msdn.microsoft.com/en-us/library/ms537178(v=vs.85).aspx (_Jan 3 2018_)
-* "Wayback machine" link to original IE full-path issue. Seems to redirect to a generic MDN page now, not describing that IE-specific behavior: https://web.archive.org/web/20170930214816/https://msdn.microsoft.com/en-us/library/ms535128(v=vs.85).aspx (_Jan 3 2018_)
+* Regarding IE behavior, also see URLACTION_HTML_INCLUDE_FILE_PATH at [https://msdn.microsoft.com/en-us/library/ms537178(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/ms537178(v=vs.85).aspx) (_Jan 3 2018_)
+* "Wayback machine" link to original IE full-path issue. Seems to redirect to a generic MDN page now, not describing that IE-specific behavior: [https://web.archive.org/web/20170930214816/https://msdn.microsoft.com/en-us/library/ms535128(v=vs.85).aspx](https://web.archive.org/web/20170930214816/https://msdn.microsoft.com/en-us/library/ms535128(v=vs.85).aspx) (_Jan 3 2018_)
