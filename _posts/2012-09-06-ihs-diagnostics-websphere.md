@@ -1,8 +1,16 @@
 ---
 title: Using IBM HTTP Server 6.1 diagnostic capabilities with WebSphere
-tags: [ihs,diagnostic,websphere,httpd,mod_status,plugin,debugging,apache]
+tags:
+  - ihs
+  - diagnostic
+  - websphere
+  - httpd
+  - mod_status
+  - plugin
+  - debugging
+  - apache
 ---
-[Using IBM HTTP Server 6.1 and later diagnostic capabilities with WebSphere](http://publib.boulder.ibm.com/httpserv/ihsdiag/WebSphere61.html)
+[Using IBM HTTP Server 6.1 and later diagnostic capabilities with WebSphere](https://publib.boulder.ibm.com/httpserv/ihsdiag/WebSphere61.html)
 
 This could be useful. Apache mod_status is available in IHS, and when it's enabled it provides information about the individual threads running under the httpd processes.
 
