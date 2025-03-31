@@ -107,5 +107,6 @@ Or use a feature that includes that, like `webProfile-10.0`.
 
 * [Jakarta RESTful Web Services approach](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#consuming_multipart_formdata)
 * [jakarta.ws.rs.core](https://jakarta.ee/specifications/platform/10/apidocs/jakarta/ws/rs/core/package-summary) Javadoc, including [EntityPart](https://jakarta.ee/specifications/platform/10/apidocs/jakarta/ws/rs/core/entitypart) used above
+* Liberty [Jakarta RESTful Web Services feature](https://openliberty.io/docs/latest/reference/feature/restfulWS-3.1.html)
 
 
