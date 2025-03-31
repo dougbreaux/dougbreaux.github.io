@@ -17,6 +17,17 @@ In fact, while [the Liberty documentation](https://openliberty.io/docs/latest/se
 
 So, while there's not much to add to that official Jakarta documentation, I'll go ahead and share the equivalent code that replaces our prior, Liberty-specific versions.
 
+### Maven dependency
+
+```xml
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+```
+
 ### Java Resource
 
 ```java
@@ -82,6 +93,15 @@ So, while there's not much to add to that official Jakarta documentation, I'll g
         return yourCodeToProcessTheFileAndTextFields(file, params);
     }
 ```
+
+### Liberty server.xml
+
+```xml
+    <featureManager>
+        <feature>restfulWS-3.1</feature>
+    </featureManager>
+```
+Or use a feature that includes that, like `webProfile-10.0`.
 
 ## References
 
