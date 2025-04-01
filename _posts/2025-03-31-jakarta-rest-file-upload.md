@@ -9,8 +9,6 @@ tags:
   - upload
 title: Jakarta RESTful Web Service file upload
 ---
-## Jakarta RESTful Web Service file upload
-
 Follow-up to [previous posts](/2022/09/22/websphere-liberty-jaxrs-file-upload.html), now using the standard [Jakarta RESTful Web Services approach](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#consuming_multipart_formdata), with type `jakarta.ws.rs.core.EntityPart`.
 
 In fact, while [the Liberty documentation](https://openliberty.io/docs/latest/send-receive-multipart-jaxrs.html) still describes the "old" way of doing this, it explicitly says that is deprecated and links to the above content for the "new" way.
@@ -31,7 +29,24 @@ So, while there's not much to add to that official Jakarta documentation, I'll g
 ### Java Resource
 
 ```java
-    protected Response processSubmit(List<EntityPart> parts) throws ResponseException
+package your.package;
+...
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.EntityPart;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+...
+public class ExampleFileUploadResource {
+
+    ...
+      
+    @POST
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)	// or whatever you want for response type
+    public Response submitFile(List<EntityPart> parts) 
     {
         File file = null;
         Map<String, String> params = new HashMap<>();
@@ -92,6 +107,9 @@ So, while there's not much to add to that official Jakarta documentation, I'll g
 
         return yourCodeToProcessTheFileAndTextFields(file, params);
     }
+  
+    ...
+}
 ```
 
 ### Liberty server.xml
@@ -108,5 +126,3 @@ Or use a feature that includes that, like `webProfile-10.0`.
 * [Jakarta RESTful Web Services approach](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#consuming_multipart_formdata)
 * [jakarta.ws.rs.core](https://jakarta.ee/specifications/platform/10/apidocs/jakarta/ws/rs/core/package-summary) Javadoc, including [EntityPart](https://jakarta.ee/specifications/platform/10/apidocs/jakarta/ws/rs/core/entitypart) used above
 * Liberty [Jakarta RESTful Web Services feature](https://openliberty.io/docs/latest/reference/feature/restfulWS-3.1.html)
-
-
