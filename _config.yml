@@ -22,6 +22,7 @@ remote_theme: jekyll/minima@f1a2af473935661dda2d1532de8bda3035b4202a
 # use solarized-light or -dark to force one
 minima:
   skin: solarized-light
+  hide_site_feed_link: true
   social_links:
     - { platform: github,  user_url: "https://github.com/dougbreaux" }
     - { platform: stackoverflow, user_url: "https://stackoverflow.com/users/796761/dbreaux" }  
