@@ -28,7 +28,7 @@ minima:
       icon: github
       url: "https://github.com/dougbreaux"
     - title: StackOverflow
-      icon: stackoverflow
+      icon: stack-overflow
       url: "https://stackoverflow.com/users/796761/dbreaux"
     - title: LinkedIn
       icon: linkedin
