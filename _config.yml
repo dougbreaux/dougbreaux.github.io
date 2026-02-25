@@ -24,10 +24,16 @@ minima:
   skin: solarized-light
   hide_site_feed_link: true
   social_links:
-    - { title: GitHub,  url: "https://github.com/dougbreaux" }
-    - { title: StackOverflow, url: "https://stackoverflow.com/users/796761/dbreaux" }  
-    - { title: LinkedIn,  url: "https://www.linkedin.com/in/dougbreaux" }
-  
+    - title: GitHub
+      icon: github
+      url: "https://github.com/dougbreaux"
+    - title: StackOverflow
+      icon: stackoverflow
+      url: "https://stackoverflow.com/users/796761/dbreaux"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/dougbreaux"
+
 #paginate: 10
 
 kramdown:
@@ -41,7 +47,7 @@ gems:
 # fake Disqus so can do utterances comments without changing base Minima post.html
 disqus:
   shortname: fake_disqus_utterances
-  
+
 plugins:
  #- jekyll-feed
  - jekyll-seo-tag
