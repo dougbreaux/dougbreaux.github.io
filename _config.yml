@@ -1,7 +1,9 @@
 name: Dougclectica Rebooted
 title: Dougclectica Rebooted
-author: Doug Breaux
-#email: your-email@domain.com
+author:
+  name: Doug Breaux
+  #email: your-email@domain.com
+
 description: > # this means to ignore newlines until "show_excerpts:"
   Topics from my software development meanderings.
 show_excerpts: true
