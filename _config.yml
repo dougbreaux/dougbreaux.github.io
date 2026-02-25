@@ -17,7 +17,7 @@ url: "https://dougbreaux.github.io"
 #rss: rss
 
 # to get latest master
-remote_theme: jekyll/minima@fab0f3faf09fa355e4702de3a557a314b4a600fb
+remote_theme: jekyll/minima
 
 # https://github.com/jekyll/minima#available-skins
 # solarized adjusts to user's dark/light system theme
